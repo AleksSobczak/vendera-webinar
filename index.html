@@ -15,7 +15,7 @@
 <script>
 /* ===== EINSTELLUNGEN: nur hier eintragen, der Rest der Seite greift darauf zu ===== */
 window.VENDERA={
-  formEndpoint:'',   // Webhook (Make/Zapier) oder Brevo-Endpunkt, an den die Anmeldung geht. LEER = Anmeldungen werden NICHT gespeichert!
+  formEndpoint:'https://phpafnimpbwbqgswqxqc.supabase.co/functions/v1/vendera-intake', // speichert Anmeldungen im Vendera-CRM (Supabase, Schema vendera)
   whatsappLink:'',   // Einladungslink der WhatsApp-Community
   metaPixelId:'',    // Meta-Pixel-ID (lädt erst nach Zustimmung im Hinweis unten)
   videoUrl:'',       // Einbettungs-Link des Einladungsvideos (z. B. Wistia/YouTube embed)
@@ -464,18 +464,27 @@ input::placeholder{color:#8A7D72}
   if(C.whatsappLink){$('wa-link').href=C.whatsappLink;$('step-wa').hidden=false;$('step-cal-nr').textContent='2';}
 
   // Herkunft der Anmeldung (für die Auswertung der Anzeigen)
+  var SITZUNG=Math.random().toString(36).slice(2)+Date.now().toString(36);
   var q=new URLSearchParams(location.search), herkunft={};
   ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function(k){if(q.get(k))herkunft[k]=q.get(k);});
 
   function senden(daten){
     if(!C.formEndpoint){console.warn('VENDERA.formEndpoint ist leer: Anmeldung wurde NICHT gespeichert.',daten);return Promise.resolve();}
-    return fetch(C.formEndpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(daten)});
+    daten.sitzung=SITZUNG;
+    return fetch(C.formEndpoint,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(daten)})
+      .then(function(r){if(!r.ok)throw new Error('Speichern fehlgeschlagen ('+r.status+')');return r;});
   }
+  // Anonyme Zählung für die Auswertung der Seite: kein Cookie, keine Speicherung im Browser
+  function zaehle(name){if(!C.formEndpoint)return;senden({typ:'event',name:name,seite:location.href,herkunft:herkunft}).catch(function(){});}
+  zaehle('pageview');
+  var gestartet=false;
+  $('anmeldeformular').addEventListener('focusin',function(){if(!gestartet){gestartet=true;zaehle('form_start');}});
 
   var kontakt=null;
   $('anmeldeformular').addEventListener('submit',function(e){
     e.preventDefault();
     var f=e.target; if(f.website.value)return; // Spam-Falle
+    if(Date.now()>END+3*864e5){$('formerr').textContent='Der Workshop ist vorbei. Eine Anmeldung ist nicht mehr möglich.';$('formerr').hidden=false;return;}
     var btn=$('submitbtn'); btn.disabled=true; btn.textContent='Einen Moment …'; $('formerr').hidden=true;
     kontakt={typ:'anmeldung',vorname:f.vorname.value.trim(),email:f.email.value.trim(),telefon:f.telefon.value.trim(),einwilligung:true,zeitpunkt:new Date().toISOString(),webinar:'2026-11-29',seite:location.href,herkunft:herkunft};
     senden(kontakt).then(function(){

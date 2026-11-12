@@ -12,7 +12,7 @@ Oben in beiden HTML-Dateien steht ein Block `window.VENDERA = { ... }`. Nur dort
 
 | Feld | Datei | Wofür |
 |---|---|---|
-| `formEndpoint` | index | Webhook, an den die Anmeldung geht (JSON als Text). **Solange leer, wird keine Anmeldung gespeichert.** |
+| `formEndpoint` | index | Eingang des Vendera-CRM (Supabase Edge Function `vendera-intake`). Speichert Anmeldung, Segment und anonyme Seitenaufrufe. |
 | `whatsappLink` | index | Einladungslink der WhatsApp-Community (erscheint nach der Anmeldung) |
 | `metaPixelId` | index | Meta-Pixel, lädt erst nach Zustimmung, sendet `Lead` bei Anmeldung |
 | `videoUrl` | index | Einladungsvideo von Sarah (Embed-Link), Block bleibt sonst ausgeblendet |
