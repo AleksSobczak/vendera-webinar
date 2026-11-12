@@ -22,7 +22,7 @@ Oben in beiden HTML-Dateien steht ein Block `window.VENDERA = { ... }`. Nur dort
 
 ## Fotos
 
-`img/sarah-hero.jpg` (Hochformat 4:5) und `img/sarah-portrait.jpg` (quadratisch) hochladen. Fehlen die Dateien, zeigt die Seite stattdessen die Inhaltskarte bzw. blendet das Porträt aus.
+Logo, Sarahs Foto und die Profilbilder der Kundinnen werden direkt aus dem Quiz-Funnel geladen (perspective.imgix.net). Werden die Bilder dort gelöscht, zeigt die Seite stattdessen die Inhaltskarte bzw. blendet Porträt und Profilbilder aus.
 
 ## Daten, die das Formular sendet
 
