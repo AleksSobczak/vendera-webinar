@@ -341,13 +341,13 @@ input::placeholder{color:#8A7D72}
 <div class="s74">
 <div class="s34">Jetzt bist du dran</div>
 <h2 class="s75">Sichere dir deinen Platz im kostenlosen Live-Workshop</h2>
-<p class="s76" id="formintro">Sonntag, 29.11., um 11:00 Uhr, live auf Zoom. Den Zugangslink bekommst du direkt nach der Anmeldung per E-Mail.</p>
+<p class="s76" id="formintro">Sonntag, 29.11., um 11:00 Uhr, live auf Zoom. Den Zugangslink bekommst du rechtzeitig vor dem Start per E-Mail.</p>
 </div>
 <div id="danke" hidden>
 <div class="s77">
 <div class="s78"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"></path></svg></div>
 <div class="s79" id="danke-titel">Du bist dabei!</div>
-<div class="s38">Deine Bestätigung ist unterwegs in dein Postfach. Zwei Dinge noch, damit du am Sonntag sicher live dabei bist:</div>
+<div class="s38">Dein Platz ist reserviert. Den Zugangslink bekommst du rechtzeitig vor dem Start per E-Mail. Damit du am Sonntag sicher live dabei bist:</div>
 </div>
 <div class="steps">
 <div class="step" id="step-wa" hidden><b>1. Komm in die WhatsApp-Community</b><span class="s38">Dort schickt dir Sarah am Sonntagmorgen deinen Live-Link und vorab ein paar Impulse zur Vorbereitung.</span><a class="s25" id="wa-link" href="#" target="_blank" rel="noopener" style="min-height:48px;font-size:16px">Zur WhatsApp-Community</a></div>
@@ -384,7 +384,7 @@ input::placeholder{color:#8A7D72}
 <h2 class="s89">Häufige Fragen</h2>
 <div class="s90">
 <details class="s91"><summary class="s29">Kostet der Workshop etwas?</summary><p class="s92">Nein. Der Live-Workshop ist komplett kostenlos.</p></details>
-<details class="s91"><summary class="s29">Wo findet der Workshop statt?</summary><p class="s92">Online auf Zoom. Den Link bekommst du nach der Anmeldung per E-Mail und kurz vor dem Start noch einmal als Erinnerung.</p></details>
+<details class="s91"><summary class="s29">Wo findet der Workshop statt?</summary><p class="s92">Online auf Zoom. Den Link bekommst du vor dem Workshop per E-Mail und am Sonntagmorgen noch einmal als Erinnerung.</p></details>
 <details class="s91"><summary class="s29">Gibt es eine Aufzeichnung?</summary><p class="s92">Ja. Alle Angemeldeten bekommen die Aufzeichnung, sie ist bis Mittwoch, 2.12., online. Live dabei zu sein lohnt sich trotzdem, weil Sarah am Ende deine Fragen beantwortet.</p></details>
 <details class="s91"><summary class="s29">Brauche ich Vorerfahrung im Vertrieb?</summary><p class="s92">Nein. Die 4 Schritte helfen dir als Einsteigerin genauso wie mit jahrelanger Erfahrung.</p></details>
 <details class="s91"><summary class="s29">Ich bin keine Closerin, sondern verkaufe mein eigenes Angebot. Passt das?</summary><p class="s92">Ja. Preis nennen, Einwände, der Moment der Entscheidung: Das ist im eigenen Business genau dasselbe. Sarah zeigt Beispiele aus beiden Welten.</p></details>
@@ -455,7 +455,7 @@ input::placeholder{color:#8A7D72}
 
   // Kalender-Links
   var titel='Live-Workshop mit Sarah Florin: Deine Abschluss-Identität';
-  var text='Kostenloser Live-Workshop von Vendera Sales. Den Zoom-Link findest du in deiner Bestätigungsmail und am Sonntagmorgen in der WhatsApp-Community.';
+  var text='Kostenloser Live-Workshop von Vendera Sales. Den Zoom-Link bekommst du vor dem Start per E-Mail.';
   $('cal-google').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(titel)+'&dates=20261129T100000Z/20261129T113000Z&details='+encodeURIComponent(text)+'&location=Zoom';
   var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Vendera Sales//Workshop//DE','BEGIN:VEVENT','UID:workshop-20261129@vendera-sales.de','DTSTAMP:20261112T000000Z','DTSTART:20261129T100000Z','DTEND:20261129T113000Z','SUMMARY:'+titel,'DESCRIPTION:'+text.replace(/,/g,'\\,'),'LOCATION:Zoom','BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:Workshop startet in 30 Minuten','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
   $('cal-ics').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
