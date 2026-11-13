@@ -5,6 +5,7 @@ Statische Seiten für workshop.vendera-sales.de (GitHub Pages).
 - `index.html`: Anmeldeseite
 - `aufzeichnung.html`: Seite für die Aufzeichnung. Vor dem 29.11., 12:30 Uhr zählt sie bis zum Workshop herunter, danach bis zum Ende der Aufzeichnung, ab 2.12., 23:59 Uhr zeigt sie automatisch "offline"
 - `assets/vendera.css`: gemeinsames Design beider Seiten (dunkel, Gold als Akzent). Die Akzentfarbe steht oben in `--acc`, `--acc-hi`, `--acc-lo`
+- Nach Änderungen an `assets/` die Versionsnummer `?v=` in beiden HTML-Dateien hochzählen, sonst zeigen Browser bis zu 10 Minuten die alte Datei
 - `assets/kundinnen.js`: Kundinnen-Ergebnisse für beide Seiten (Foto, Zitat, optional Video-Link)
 - `img/og.png`: Vorschaubild für WhatsApp und Social Media
 
