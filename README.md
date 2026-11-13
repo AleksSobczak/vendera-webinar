@@ -4,6 +4,8 @@ Statische Seiten für workshop.vendera-sales.de (GitHub Pages).
 
 - `index.html`: Anmeldeseite
 - `aufzeichnung.html`: Seite für die Aufzeichnung. Vor dem 29.11., 12:30 Uhr zählt sie bis zum Workshop herunter, danach bis zum Ende der Aufzeichnung, ab 2.12., 23:59 Uhr zeigt sie automatisch "offline"
+- `assets/vendera.css`: gemeinsames Design beider Seiten (dunkel, Gold als Akzent). Die Akzentfarbe steht oben in `--acc`, `--acc-hi`, `--acc-lo`
+- `assets/kundinnen.js`: Kundinnen-Ergebnisse für beide Seiten (Foto, Zitat, optional Video-Link)
 - `img/og.png`: Vorschaubild für WhatsApp und Social Media
 
 ## Einstellungen
@@ -15,7 +17,7 @@ Oben in beiden HTML-Dateien steht ein Block `window.VENDERA = { ... }`. Nur dort
 | `formEndpoint` | index | Eingang des Vendera-CRM (Supabase Edge Function `vendera-intake`). Speichert Anmeldung, Segment und anonyme Seitenaufrufe. |
 | `whatsappLink` | index | Einladungslink der WhatsApp-Community (erscheint nach der Anmeldung) |
 | `metaPixelId` | index | Meta-Pixel, lädt erst nach Zustimmung, sendet `Lead` bei Anmeldung |
-| `videoUrl` | index | Einladungsvideo von Sarah (Embed-Link), Block bleibt sonst ausgeblendet |
+| `videoUrl` | index | Einladungsvideo von Sarah (Embed-Link). Ohne Link zeigt die Seite nur das Vorschaubild, ohne Play-Knopf |
 | `replayUrl` | aufzeichnung | Embed-Link der Aufzeichnung |
 | `buchungslink` | aufzeichnung | Calendly-Link zur Strategie-Session |
 | `formEndpoint` | aufzeichnung | zählt anonym `replay_vorab`, `replay_view` und `buchung_klick` im Vendera-CRM |
@@ -29,6 +31,10 @@ Oben in beiden HTML-Dateien steht ein Block `window.VENDERA = { ... }`. Nur dort
 `https://workshop.vendera-sales.de/aufzeichnung.html?vorname={{contact.FIRSTNAME}}&email={{contact.EMAIL}}&utm_source=brevo&utm_content=<mail>`
 
 Vorname und E-Mail werden dann im Calendly-Formular vorausgefüllt, `utm_source`, `utm_campaign` und `utm_content` gehen an Calendly weiter.
+
+## Formular
+
+Alle Buttons auf der Anmeldeseite öffnen das Formular als Popup. `workshop.vendera-sales.de/#anmelden` öffnet es direkt. Zusätzliches Ereignis: `form_open`.
 
 ## Fotos
 
