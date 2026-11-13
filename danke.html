@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anmeldung bestätigt: Die Abschluss-Identität | Vendera Sales</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B0807">
+<script>
+/* ===== EINSTELLUNGEN DER DANKE-SEITE ===== */
+window.VENDERA={
+  formEndpoint:'https://phpafnimpbwbqgswqxqc.supabase.co/functions/v1/vendera-intake', // CRM: Zusatzfrage und anonyme Zählung
+  dankeVideo:'',     // Wistia-Media-ID von Sarahs kurzem Danke-Video (10 Zeichen). Leer = Foto ohne Play-Knopf
+  whatsappLink:'',   // Einladungslink der WhatsApp-Community. Leer = Schritt wird ausgeblendet
+  mailAktiv:false,   // true, sobald Brevo nach der Anmeldung sofort eine Bestätigung verschickt
+  metaPixelId:'',    // Meta-Pixel-ID, sendet hier das Ereignis "Lead" (nur nach Zustimmung)
+  impressumUrl:'https://vendera-sales.de/impressum',
+  datenschutzUrl:'https://vendera-sales.de/datenschutz'
+};
+</script>
+<link rel="preconnect" href="https://fast.wistia.net">
+<link rel="preconnect" href="https://embed-ssl.wistia.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Merriweather:ital,wght@1,400;1,700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendera.css?v=4">
+</head>
+<body>
+<div class="okbar"><span class="dot pulse"></span>Anmeldung bestätigt</div>
+<div class="frame" style="margin-top:0;border-radius:0 0 0 0">
+
+<div class="infopills">
+<span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span id="wann">Sonntag, 29.11. · 11:00 Uhr</span></span>
+<span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2.5 2M9 2h6"></path></svg>Dauer: 90 Minuten</span>
+</div>
+
+<!-- KOPF + VIDEO -->
+<section class="dhero">
+<div class="wrap">
+<span class="pill warn"><span class="dot pulse"></span>Anmeldung fast abgeschlossen</span>
+<h1 class="dh1" id="dtitel">Deine Anmeldung war <span class="acc">erfolgreich!</span><span id="dvideo-zeile"><br>Schau dir jetzt das kurze Video von Sarah an</span></h1>
+<div class="dvideo" id="dvideo">
+<img src="img/sarah-hero.jpg" alt="Sarah Florin" onerror="this.remove()">
+<button type="button" class="play" id="dplay" hidden aria-label="Video von Sarah abspielen"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg></button>
+</div>
+<p class="dnote">Super, du bist auf der Teilnehmerliste!<br>Bitte erledige die <b><span class="anz">3</span> Schritte</b> unten, damit du <b><span class="wann-kurz">am Sonntag um 11:00 Uhr</span></b> live dabei bist.</p>
+</div>
+</section>
+
+<!-- SCHRITTE -->
+<section style="padding-bottom:56px">
+<div class="wrap">
+<div class="dsteps-h">
+<h2>Erledige die <span class="acc"><span class="anz">3</span> Schritte</span> unten, um deine Anmeldung abzuschließen.</h2>
+<svg class="arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg>
+</div>
+
+<div class="dstep" id="s-wa" hidden>
+<span class="snr">Schritt <span class="nr"></span></span>
+<h3>Tritt der WhatsApp-Community bei</h3>
+<p>Dort bekommst du am Sonntagmorgen deinen Live-Link und vorab die wichtigsten Infos zum Workshop.</p>
+<a class="btn mid wa" id="wa-link" href="#" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.7-.3z"></path></svg>Community beitreten</a>
+</div>
+
+<div class="dstep" id="s-cal">
+<span class="snr">Schritt <span class="nr"></span></span>
+<h3>Trag dir den Termin in deinen Kalender ein</h3>
+<p>Speichere dir den Workshop direkt in deinem Kalender, damit du <span class="wann-kurz">am Sonntag um 11:00 Uhr</span> nichts verpasst und pünktlich live dabei bist.</p>
+<button type="button" class="btn mid" id="cal-btn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>Zum Kalender hinzufügen</button>
+<div class="calopts" id="calopts" hidden><a class="btn2" id="cal-google" href="#" target="_blank" rel="noopener">Google Kalender</a><a class="btn2" id="cal-ics" href="#" download="vendera-live-workshop.ics">Apple / Outlook</a></div>
+</div>
+
+<div class="dstep" id="s-mail">
+<span class="snr">Schritt <span class="nr"></span></span>
+<h3>Behalte dein E-Mail-Postfach im Blick</h3>
+<p id="mail-text">Vor dem Start bekommst du den Zugangslink zum Workshop per E-Mail. Schau dann auch im Spam- oder Werbung-Ordner nach und markiere die Mail als „Kein Spam“.</p>
+<div class="mailrow">
+<a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noopener"><i style="background:#EA4335">M</i>Gmail</a>
+<a href="https://outlook.live.com/mail/0/inbox" target="_blank" rel="noopener"><i style="background:#0F6CBD">O</i>Outlook</a>
+<a href="https://www.gmx.net/" target="_blank" rel="noopener"><i style="background:#1C449B">G</i>GMX</a>
+<a href="https://web.de/" target="_blank" rel="noopener"><i style="background:#FFD800;color:#333">W</i>WEB.DE</a>
+</div>
+</div>
+
+<div class="dstep" id="s-seg" hidden>
+<span class="snr" style="background:var(--acc-soft);color:var(--acc);border:1px solid var(--line)">Kurze Frage</span>
+<h3>Führst du gerade Verkaufsgespräche?</h3>
+<p>Ein Klick genügt. So kann Sarah die Beispiele am Sonntag auf euch zuschneiden.</p>
+<div class="seg" id="seg" style="width:100%">
+<button type="button" data-seg="eigenes-angebot">Ja, für mein eigenes Angebot</button>
+<button type="button" data-seg="closerin">Ja, für andere (als Closerin, Setterin oder im Vertrieb)</button>
+<button type="button" data-seg="einstieg">Noch nicht</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ERGEBNISSE -->
+<section class="sec alt">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow">Echte Ergebnisse</div>
+<h2>Das sagen Frauen, die mit <span class="acc">Sarah</span> gearbeitet haben</h2>
+<p class="lead">Closerinnen und Unternehmerinnen, die heute klarer abschließen.</p>
+</div>
+<div class="grid2" id="ergebnisse"></div>
+<div class="note">Erfahrungen einzelner Kundinnen und Auftraggeberinnen. Ergebnisse sind individuell und keine Garantie.</div>
+<div class="stats">
+<div class="stat"><b class="acc">6.000+</b><span>Verkaufsgespräche</span></div>
+<div class="stat"><b class="acc">20+</b><span>Personal Brands</span></div>
+<div class="stat"><b class="acc">4.9 ★</b><span>aus 200+ Bewertungen</span></div>
+</div>
+</div>
+</section>
+
+<footer class="foot">
+<img class="logo" src="https://perspective.imgix.net/6a8b231ad07f37743e10e0e3.png?auto=compress%2Cformat&amp;h=120" alt="Vendera" style="height:32px" onerror="this.remove()">
+<nav><a href="#impressum" data-link="impressum">Impressum</a><a href="#datenschutz" data-link="datenschutz">Datenschutz</a></nav>
+<div>© 2026 Vendera Sales · Sarah Florin</div>
+</footer>
+</div>
+
+<div class="consent" id="consent"><span>Wir möchten messen, über welche Anzeige du gekommen bist, und nutzen dafür das Meta-Pixel. Das passiert nur mit deiner Zustimmung. Mehr in der <a href="#datenschutz" data-link="datenschutz">Datenschutzerklärung</a>.</span><div><button type="button" id="c-no">Ablehnen</button><button type="button" class="ok" id="c-yes">Einverstanden</button></div></div>
+
+<script src="assets/kundinnen.js?v=2"></script>
+<script>
+(function(){
+  var C=window.VENDERA||{};
+  var START=Date.parse('2026-11-29T11:00:00+01:00');
+  function $(id){return document.getElementById(id);}
+  function alle(sel){return Array.prototype.slice.call(document.querySelectorAll(sel));}
+  function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
+
+  // Daten aus der Anmeldung (nur in diesem Tab gespeichert)
+  var a=null; try{a=JSON.parse(sessionStorage.getItem('vendera_anmeldung')||'null');}catch(e){}
+  if(a&&a.vorname){$('dtitel').innerHTML='Deine Anmeldung war <span class="acc">erfolgreich</span>, '+a.vorname.replace(/[<>&"]/g,'')+'!'+$('dvideo-zeile').outerHTML;}
+
+  // "Diesen Sonntag", sobald der Workshop in der laufenden Woche ist
+  var tage=(START-Date.now())/864e5;
+  if(tage>0&&tage<7){$('wann').textContent='Diesen Sonntag · 11:00 Uhr';alle('.wann-kurz').forEach(function(e){e.textContent='diesen Sonntag um 11:00 Uhr';});}
+
+  // Rechtliche Links
+  [['impressum',C.impressumUrl],['datenschutz',C.datenschutzUrl]].forEach(function(x){
+    if(!x[1])return; alle('[data-link="'+x[0]+'"]').forEach(function(l){l.href=x[1];l.target='_blank';l.rel='noopener';});
+  });
+
+  // Video von Sarah (Wistia)
+  if(C.dankeVideo){
+    $('dplay').hidden=false;
+    $('dplay').onclick=function(){
+      var f=document.createElement('iframe');
+      f.src='https://fast.wistia.net/embed/iframe/'+C.dankeVideo+'?autoPlay=true&videoFoam=false&fitStrategy=cover&playerColor=E1C075';
+      f.title='Video von Sarah Florin';f.allow='autoplay; fullscreen';f.allowFullscreen=true;
+      $('dvideo').appendChild(f);this.remove();
+    };
+  }else{
+    $('dvideo-zeile').hidden=true;
+  }
+
+  // Schritte: WhatsApp nur mit Link, Nummern und Anzahl passen sich an
+  if(C.whatsappLink){$('wa-link').href=C.whatsappLink;$('s-wa').hidden=false;}
+  var schritte=['s-wa','s-cal','s-mail'].filter(function(id){return !$(id).hidden;});
+  schritte.forEach(function(id,i){$(id).querySelector('.nr').textContent=i+1;});
+  alle('.anz').forEach(function(e){e.textContent=schritte.length;});
+
+  // E-Mail-Text: nur von einer schon verschickten Mail sprechen, wenn Brevo wirklich verschickt
+  if(C.mailAktiv){$('mail-text').textContent='Wir haben dir gerade deine persönliche Einladung mit allen Infos und dem Zugangslink geschickt. Öffne sie und schau auch im Spam- oder Werbung-Ordner nach, falls sie nicht gleich da ist.';}
+
+  // Kalender
+  var titel='Live-Workshop mit Sarah Florin: Die Abschluss-Identität';
+  var text='Kostenloser Live-Workshop von Vendera Sales. Den Zoom-Link bekommst du vor dem Start per E-Mail.';
+  $('cal-google').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(titel)+'&dates=20261129T100000Z/20261129T113000Z&details='+encodeURIComponent(text)+'&location=Zoom';
+  var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Vendera Sales//Workshop//DE','BEGIN:VEVENT','UID:workshop-20261129@vendera-sales.de','DTSTAMP:20261112T000000Z','DTSTART:20261129T100000Z','DTEND:20261129T113000Z','SUMMARY:'+titel,'DESCRIPTION:'+text.replace(/,/g,'\\,'),'LOCATION:Zoom','BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:Workshop startet in 30 Minuten','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  $('cal-ics').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
+  $('cal-btn').onclick=function(){$('calopts').hidden=false;this.hidden=true;zaehle('danke_kalender');};
+
+  // Kundinnen
+  if(window.zeigeKundinnen)window.zeigeKundinnen($('ergebnisse'));
+
+  // CRM: anonyme Zählung und Zusatzfrage
+  var q=new URLSearchParams(location.search), herkunft={};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function(k){if(q.get(k))herkunft[k]=q.get(k);});
+  var SITZUNG=Math.random().toString(36).slice(2)+Date.now().toString(36);
+  function senden(d){if(!C.formEndpoint)return Promise.resolve();d.sitzung=SITZUNG;return fetch(C.formEndpoint,{method:'POST',keepalive:true,headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(d)});}
+  function zaehle(name){senden({typ:'event',name:name,seite:location.href,herkunft:herkunft}).catch(function(){});}
+  zaehle('danke_view');
+  $('wa-link').addEventListener('click',function(){zaehle('danke_whatsapp');});
+
+  if(a&&a.email){
+    $('s-seg').hidden=false;
+    $('seg').addEventListener('click',function(e){
+      var b=e.target.closest('button'); if(!b)return;
+      senden({typ:'segment',email:a.email,segment:b.getAttribute('data-seg')}).catch(function(){});
+      $('s-seg').innerHTML='<h3>Danke dir!</h3><p>Bis Sonntag um 11 Uhr. Sarah freut sich auf dich.</p>';
+    });
+  }
+
+  // Meta-Pixel: "Lead" einmal pro Anmeldung, nur mit Zustimmung
+  function pixel(){
+    if(!C.metaPixelId||window.fbq)return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',C.metaPixelId);fbq('track','PageView');
+    if(a&&!a.lead){fbq('track','Lead');a.lead=1;try{sessionStorage.setItem('vendera_anmeldung',JSON.stringify(a));}catch(e){}}
+  }
+  if(C.metaPixelId){
+    var z=store('vendera_consent');
+    if(z==='ja')pixel(); else if(z!=='nein')$('consent').classList.add('on');
+    $('c-yes').onclick=function(){store('vendera_consent','ja');$('consent').classList.remove('on');pixel();};
+    $('c-no').onclick=function(){store('vendera_consent','nein');$('consent').classList.remove('on');};
+  }
+})();
+</script>
+</body>
+</html>

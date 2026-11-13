@@ -3,6 +3,7 @@
 Statische Seiten für workshop.vendera-sales.de (GitHub Pages).
 
 - `index.html`: Anmeldeseite
+- `danke.html`: Danke-Seite nach Fynns Aufbau. Das Formular leitet nach erfolgreicher Anmeldung dorthin weiter (UTM-Parameter gehen mit, Vorname und E-Mail nur über sessionStorage, nicht in der Adresse). Einstellungen oben in der Datei: `dankeVideo` (Wistia-ID), `whatsappLink`, `mailAktiv`, `metaPixelId`. Das Meta-Ereignis `Lead` wird hier gesendet. Ereignisse im CRM: `danke_view`, `danke_kalender`, `danke_whatsapp`; die Frage "Führst du gerade Verkaufsgespräche?" steht jetzt hier
 - `aufzeichnung.html`: Seite für die Aufzeichnung. Vor dem 29.11., 12:30 Uhr zählt sie bis zum Workshop herunter, danach bis zum Ende der Aufzeichnung, ab 2.12., 23:59 Uhr zeigt sie automatisch "offline"
 - `assets/vendera.css`: gemeinsames Design beider Seiten (dunkel, Gold als Akzent). Die Akzentfarbe steht oben in `--acc`, `--acc-hi`, `--acc-lo`
 - Nach Änderungen an `assets/` die Versionsnummer `?v=` in beiden HTML-Dateien hochzählen, sonst zeigen Browser bis zu 10 Minuten die alte Datei
@@ -16,7 +17,7 @@ Oben in beiden HTML-Dateien steht ein Block `window.VENDERA = { ... }`. Nur dort
 | Feld | Datei | Wofür |
 |---|---|---|
 | `formEndpoint` | index | Eingang des Vendera-CRM (Supabase Edge Function `vendera-intake`). Speichert Anmeldung, Segment und anonyme Seitenaufrufe. |
-| `whatsappLink` | index | Einladungslink der WhatsApp-Community (erscheint nach der Anmeldung) |
+| `whatsappLink` | danke | Einladungslink der WhatsApp-Community (erscheint nach der Anmeldung) |
 | `metaPixelId` | index | Meta-Pixel, lädt erst nach Zustimmung, sendet `Lead` bei Anmeldung |
 | `videoUrl` | index | Einladungsvideo von Sarah (Embed-Link). Ohne Link zeigt die Seite nur das Vorschaubild, ohne Play-Knopf |
 | `replayUrl` | aufzeichnung | Embed-Link der Aufzeichnung |
