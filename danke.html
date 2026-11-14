@@ -172,9 +172,9 @@ window.VENDERA={
 
   // Kalender
   var titel='Live-Workshop mit Sarah Florin: Die Abschluss-Identität';
-  var text='Kostenloser Live-Workshop von Vendera Sales. Den Zoom-Link bekommst du vor dem Start per E-Mail.';
-  $('cal-google').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(titel)+'&dates=20261129T100000Z/20261129T113000Z&details='+encodeURIComponent(text)+'&location=Zoom';
-  var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Vendera Sales//Workshop//DE','BEGIN:VEVENT','UID:workshop-20261129@vendera-sales.de','DTSTAMP:20261112T000000Z','DTSTART:20261129T100000Z','DTEND:20261129T113000Z','SUMMARY:'+titel,'DESCRIPTION:'+text.replace(/,/g,'\\,'),'LOCATION:Zoom','BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:Workshop startet in 30 Minuten','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  var text='Kostenloser Live-Workshop von Vendera Sales. Den Zugangslink bekommst du vor dem Start per E-Mail.';
+  $('cal-google').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(titel)+'&dates=20261129T100000Z/20261129T113000Z&details='+encodeURIComponent(text)+'&location=Online';
+  var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Vendera Sales//Workshop//DE','BEGIN:VEVENT','UID:workshop-20261129@vendera-sales.de','DTSTAMP:20261112T000000Z','DTSTART:20261129T100000Z','DTEND:20261129T113000Z','SUMMARY:'+titel,'DESCRIPTION:'+text.replace(/,/g,'\\,'),'LOCATION:Online','BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:Workshop startet in 30 Minuten','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
   $('cal-ics').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
   $('cal-btn').onclick=function(){$('calopts').hidden=false;this.hidden=true;zaehle('danke_kalender');};
 
