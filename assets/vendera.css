@@ -492,3 +492,13 @@ h2{font-size:clamp(28px,4.6vw,40px);max-width:620px}
 @media (min-width:641px){
   .hero.mit-bild .methode,.hero.mit-bild .zielzeile{max-width:310px;text-wrap:balance}
 }
+
+/* Hero: Versprechen unter der Methode */
+.versprechen{position:relative;padding:2px 0 2px 18px;max-width:420px}
+.versprechen::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:3px;border-radius:3px;background:linear-gradient(180deg,#E1C075,var(--acc))}
+.v-haupt{margin:0;font-family:var(--serif);font-size:clamp(18px,2vw,21px);font-weight:700;line-height:1.35;color:var(--text)}
+.v-haupt .acc{color:var(--acc)}
+.v-inkl{margin:6px 0 0;font-size:15px;line-height:1.5;color:var(--muted)}
+.v-inkl b{color:var(--text);font-weight:700;white-space:nowrap}
+@media (max-width:640px){.v-haupt{font-size:17px}.v-inkl{font-size:14px}}
+@media (min-width:900px){.hero.mit-bild .versprechen{max-width:340px}}
