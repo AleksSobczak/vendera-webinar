@@ -33,7 +33,7 @@ window.VENDERA={
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&amp;family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/vendera.css?v=14">
+<link rel="stylesheet" href="assets/vendera.css?v=16">
 </head>
 <body class="hell">
 <div class="frame">
@@ -92,23 +92,25 @@ window.VENDERA={
 </section>
 
 <!-- INHALT -->
-<section class="sec">
+<section class="sec workshop-inhalt">
 <div class="wrap">
-<div class="head">
-<div class="eyebrow">Das erwartet dich im Live-Workshop</div>
-<h2>In 90 Minuten lernst du, wie die <span class="acc">Top 1 %</span> verkaufen</h2>
+<div class="w-head">
+<h2>Erfahre im <span class="swoosh">kostenlosen Live-Workshop</span></h2>
+<p>am Sonntag, 29.11., um 11:00 Uhr, live und mit Fragerunde</p>
 </div>
-<ol class="inhalt">
-<li><span class="inr">1</span><div><b>Warum gute Gespräche ohne Zusage enden</b><span>Die Stelle, an der es kippt, liegt meist im ersten Drittel des Gesprächs, nicht beim Preis.</span></div></li>
-<li><span class="inr">2</span><div><b>Die Vendera-Sales-Methode</b><span>Sarahs Gesprächsablauf in vier Stufen, mit dem sie jedes Verkaufsgespräch führt.</span></div></li>
-<li><span class="inr">3</span><div><b>Die drei Sätze für Preis, Zögern und Abschlussfrage</b><span>Wörtlich, zum Mitschreiben. Auch für „Ich überlege es mir“ und „Schick mir erst das Angebot“.</span></div></li>
-<li><span class="inr">4</span><div><b>Ein komplettes Verkaufsgespräch, live durchgespielt</b><span>Du siehst die vier Stufen einmal am Stück, vom ersten Satz bis zur Zusage.</span></div></li>
-<li><span class="inr">5</span><div><b>Live-Fragerunde mit Sarah</b><span>Am Ende beantwortet Sarah deine Fragen zu deinen eigenen Gesprächen.</span></div></li>
-</ol>
-<div class="inhalt-cta">
-<button type="button" class="btn" data-open>Sichere dir deinen Platz <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-<div class="micro center">Sonntag, 29.11. · 11:00 Uhr · 90 Minuten · kostenlos</div>
+<div class="wgrid">
+<div class="wcard"><div class="wico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3M11 8v3l2 2"></path></svg></div><h3>Wo dein Gespräch kippt</h3><p>Warum gute Gespräche ohne Zusage enden und woran du die Stelle schon im ersten Drittel erkennst.</p></div>
+<div class="wcard"><div class="wico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-4h4v-4h4V8h4"></path><path d="M4 20V4"></path></svg></div><h3>Die Vendera-Sales-Methode</h3><p>Sarahs Gesprächsablauf in vier Stufen, mit dem sie jedes Verkaufsgespräch führt.</p></div>
+<div class="wcard"><div class="wico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path><path d="M8.5 11h7M8.5 14h4"></path></svg></div><h3>Die drei Sätze</h3><p>Für Preis, Zögern und Abschlussfrage. Wörtlich, zum Mitschreiben.</p></div>
+<div class="wcard"><div class="wico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="13" height="14" rx="2"></rect><path d="M16 10l5-3v10l-5-3z"></path></svg></div><h3>Live durchgespielt</h3><p>Ein komplettes Verkaufsgespräch am Stück, vom ersten Satz bis zur Zusage.</p></div>
 </div>
+<div class="wtimer" role="timer" aria-label="Zeit bis zum Start">
+<div><b id="w-d">00</b><small>Tage</small></div><span>:</span>
+<div><b id="w-h">00</b><small>Stunden</small></div><span>:</span>
+<div><b id="w-m">00</b><small>Minuten</small></div><span>:</span>
+<div><b id="w-s">00</b><small>Sekunden</small></div>
+</div>
+<div class="inhalt-cta"><button type="button" class="btn wbtn" data-open>Jetzt kostenfrei anmelden</button></div>
 </div>
 </section>
 
@@ -292,6 +294,13 @@ window.VENDERA={
     el.textContent='Start in '+(t>0?t+(t===1?' Tag, ':' Tagen, '):'')+h+' Std. und '+m+' Min.';
   }
   tick();setInterval(tick,30000);
+  // Countdown im Abschnitt "Erfahre im kostenlosen Live-Workshop"
+  function wtick(){
+    var d=Math.max(0,Math.floor((START-Date.now())/1000)), p=function(n){return String(n).padStart(2,'0');};
+    var t=Math.floor(d/86400);d-=t*86400;var h=Math.floor(d/3600);d-=h*3600;var m=Math.floor(d/60);var sk=d-m*60;
+    if($('w-d')){$('w-d').textContent=p(t);$('w-h').textContent=p(h);$('w-m').textContent=p(m);$('w-s').textContent=p(sk);}
+  }
+  wtick();setInterval(wtick,1000);
 
   // Video: ohne Link bleibt das Vorschaubild ohne Play-Knopf
   function spiele(box,url,titel){
