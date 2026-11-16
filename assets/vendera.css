@@ -406,3 +406,20 @@ h2{font-size:clamp(28px,4.6vw,40px);max-width:620px}
 .methode{margin:-8px 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.2vw,20px);color:var(--acc)}
 .hero.mit-bild .h1{font-size:clamp(30px,6.2vw,52px)}
 @media (max-width:640px){.hero.mit-bild .h1{font-size:27px;line-height:1.2}.methode{font-size:15px;margin-top:-4px}}
+
+/* Hero knapp: nur Zielgruppenzeile statt Haken */
+.zielzeile{margin:0;font-size:16px;color:var(--muted);font-weight:500;max-width:440px}
+/* Abschnitt: Das erwartet dich im Live-Workshop */
+.inhalt{list-style:none;margin:0 auto;padding:0;max-width:640px;display:flex;flex-direction:column;gap:12px}
+.inhalt li{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:18px 20px;box-shadow:0 12px 30px -22px rgba(42,33,28,.3)}
+.inhalt .inr{flex:none;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;background:linear-gradient(100deg,#E1C075,#ECE2A7);color:#2A211C}
+.inhalt b{display:block;font-family:var(--serif);font-size:17px;line-height:1.3;margin-bottom:3px}
+.inhalt li span:not(.inr){display:block;color:var(--muted);font-size:15px;line-height:1.5}
+.inhalt-cta{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:28px}
+.inhalt-cta .btn{min-width:min(100%,340px)}
+@media (max-width:640px){
+  .sec.alt .grid2 .card{padding:16px 18px;gap:6px;display:grid;grid-template-columns:34px 1fr;column-gap:12px;align-items:start}
+  .sec.alt .grid2 .card .ico{width:34px;height:34px;margin:0;grid-row:span 2}
+  .sec.alt .grid2 .card h3{font-size:16px;margin-top:6px}
+  .sec.alt .grid2 .card p{font-size:14px}
+}
