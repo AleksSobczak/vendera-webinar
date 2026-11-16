@@ -402,3 +402,7 @@ h2{font-size:clamp(28px,4.6vw,40px);max-width:620px}
   .hero-portrait img{border-radius:14px 52px 14px 14px}
 }
 @media (max-width:640px){.h-head .pill{white-space:nowrap;font-size:10px;letter-spacing:.03em;padding:7px 10px}}
+
+.methode{margin:-8px 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.2vw,20px);color:var(--acc)}
+.hero.mit-bild .h1{font-size:clamp(30px,6.2vw,52px)}
+@media (max-width:640px){.hero.mit-bild .h1{font-size:27px;line-height:1.2}.methode{font-size:15px;margin-top:-4px}}
