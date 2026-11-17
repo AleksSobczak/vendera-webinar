@@ -512,3 +512,70 @@ h2{font-size:clamp(28px,4.6vw,40px);max-width:620px}
 .trust-tx span{font-size:12.5px;color:var(--muted);font-weight:500}
 .trust:hover .trust-tx b{color:var(--acc)}
 @media (max-width:640px){.trust .rate-av img{width:36px;height:36px;margin-left:-10px}.trust-tx b{font-size:13px}.trust-tx span{font-size:12px}}
+
+/* ===== Ausbau 17.11.: Beleg, Tagesvergleich, Warum, Teile, Mitnehmen, Ticket ===== */
+.proof{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:#fff}
+.proof div{padding:18px 10px;text-align:center;border-left:1px solid var(--line2)}
+.proof div:first-child{border-left:0}
+.proof b{display:block;font-family:var(--serif);font-size:clamp(19px,3.4vw,26px);color:var(--acc);line-height:1.15}
+.proof span{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.head2{margin-top:56px;margin-bottom:24px}
+.tage{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch}
+.tag-col{border-radius:20px;padding:24px 22px;display:flex;flex-direction:column;gap:14px;border:1px solid var(--line2)}
+.tag-col.heute{background:#fff}
+.tag-col.morgen{background:linear-gradient(180deg,#2F2620,#2A211C);border-color:#2A211C;color:#F6EFE4;box-shadow:0 24px 50px -28px rgba(42,33,28,.6)}
+.tag-h{display:flex;flex-direction:column;gap:6px;margin-bottom:4px}
+.tag-l{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(42,33,28,.07);color:var(--muted)}
+.morgen .tag-l{background:rgba(225,192,117,.18);color:#E1C075}
+.tag-h h3{font-family:var(--serif);font-size:19px;line-height:1.25}
+.tl{display:grid;grid-template-columns:46px 1fr;gap:10px;align-items:start}
+.tl time{font-size:13px;font-weight:800;color:var(--muted);padding-top:2px;font-variant-numeric:tabular-nums}
+.morgen .tl time{color:#E1C075}
+.tl p{margin:0;font-size:15px;line-height:1.5;font-weight:500;color:var(--text)}
+.morgen .tl p{color:#F6EFE4}
+.tag-q{margin-top:auto;padding-top:14px;border-top:1px solid var(--line2);font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.4;color:var(--text)}
+.morgen .tag-q{border-top-color:rgba(246,239,228,.14);color:#E1C075}
+.tag-q small{display:block;margin-top:6px;font-family:var(--sans);font-style:normal;font-size:12px;font-weight:600;color:#B3A595}
+.why{display:flex;flex-direction:column;gap:12px;max-width:640px;margin:0 auto}
+.why-c{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;background:#fff;border:1px solid var(--line2);border-radius:18px;padding:22px;box-shadow:0 14px 36px -22px rgba(42,33,28,.28)}
+.why-n{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:24px;font-weight:700;color:#2A211C;background:linear-gradient(180deg,#EBD08F,#E1C075)}
+.why-c h3{font-size:18px;margin-bottom:6px}
+.why-c p{margin:0;font-size:15px;line-height:1.55;color:var(--muted);font-weight:500}
+.why-out{text-align:center;max-width:520px;margin:28px auto 0;font-family:var(--serif);font-size:18px;line-height:1.45;color:var(--text)}
+.teile{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:22px;border:1px solid var(--line2);border-radius:18px;background:#fff;overflow:hidden}
+.teile div{padding:18px;display:flex;flex-direction:column;gap:4px;border-left:1px solid var(--line2)}
+.teile div:first-child{border-left:0}
+.teile span{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.teile b{font-family:var(--serif);font-size:16px}
+.teile small{font-size:13px;line-height:1.45;color:var(--muted);font-weight:500}
+.take{max-width:620px;margin:0 auto;display:flex;flex-direction:column}
+.take-r{display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start;padding:18px 0;border-bottom:1px solid var(--line2)}
+.take-r:last-child{border-bottom:0}
+.take-r span{font-family:var(--serif);font-size:28px;line-height:1;color:var(--acc);font-weight:700}
+.take-r p{margin:0;font-size:16px;line-height:1.5;color:var(--muted);font-weight:500}
+.take-r p b{color:var(--text)}
+.ticket{max-width:520px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:18px;box-shadow:0 30px 70px -34px rgba(176,138,58,.55)}
+.ticket-top{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+.ticket-top>div:first-child{display:flex;flex-direction:column;gap:3px}
+.ticket-l{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.ticket-top b{font-family:var(--serif);font-size:19px;line-height:1.25}
+.ticket-top small{font-size:13px;color:var(--muted);font-weight:600}
+.ticket-p{text-align:right;flex:none}
+.ticket-p b{display:block;font-size:34px;color:var(--acc);line-height:1}
+.ticket-li{display:flex;flex-direction:column;gap:11px}
+.ticket .li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.45;font-weight:500}
+.ticket .li svg{flex:none;margin-top:2px}
+.wtimer.klein{margin:0 auto;transform:scale(.86);transform-origin:center}
+@media (max-width:640px){
+  .tage{grid-template-columns:1fr}
+  .tag-col{padding:20px 18px}
+  .teile{grid-template-columns:1fr}
+  .teile div{border-left:0;border-top:1px solid var(--line2)}
+  .teile div:first-child{border-top:0}
+  .why-c{grid-template-columns:42px 1fr;gap:12px;padding:18px}
+  .why-n{width:42px;height:42px;font-size:20px;border-radius:12px}
+  .proof span{font-size:9.5px;letter-spacing:.06em}
+  .ticket{padding:20px}
+  .head2{margin-top:44px}
+}
+.proof{padding:0 max(0px,calc((100% - 760px)/2))}
