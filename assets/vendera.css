@@ -672,3 +672,9 @@ h2{font-size:clamp(28px,4.6vw,40px);max-width:620px}
 @media (max-width:380px){.hero.mit-bild .hero-bg-sarah{right:-70px}.hero.mit-bild .h-head .methode{width:230px;font-size:14px}}
 .nur-handy{display:none}
 @media (max-width:640px){.nur-handy{display:inline}}
+.trust-tx b,.trust-tx span{white-space:nowrap}
+.trust-tx b{font-size:15px}.trust-tx span{font-size:13px}
+@media (max-width:640px){.trust-tx b{font-size:15px}.trust-tx span{font-size:13px}}
+@media (max-width:640px){.trust{gap:10px}.trust .rate-av img{width:34px;height:34px;margin-left:-10px}.trust .rate-av img:first-child{margin-left:0}}
+@media (max-width:380px){.trust-tx b{font-size:14px}.trust-tx span{font-size:12.5px}}
+@media (max-width:380px){.cta-col .micro{font-size:11.5px;white-space:nowrap}}
