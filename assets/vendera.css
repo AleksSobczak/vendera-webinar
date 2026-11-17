@@ -665,3 +665,10 @@ h2{font-size:clamp(28px,4.6vw,40px);max-width:620px}
   .hero.mit-bild .h-head .methode{max-width:none}
 }
 @media (max-width:380px){.hero.mit-bild .h1{font-size:24px}.hero.mit-bild .h-head{max-width:60%}.hero.mit-bild .hero-bg-sarah{right:-46px}}
+@media (max-width:640px){
+  .hero.mit-bild .hero-bg-sarah{right:-60px}
+  .hero.mit-bild .h-head .methode{width:250px;max-width:none}
+}
+@media (max-width:380px){.hero.mit-bild .hero-bg-sarah{right:-70px}.hero.mit-bild .h-head .methode{width:230px;font-size:14px}}
+.nur-handy{display:none}
+@media (max-width:640px){.nur-handy{display:inline}}
