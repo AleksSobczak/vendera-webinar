@@ -33,7 +33,7 @@ window.VENDERA={
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&amp;family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/vendera.css?v=31">
+<link rel="stylesheet" href="assets/vendera.css?v=33">
 </head>
 <body class="hell">
 <div class="frame">
@@ -429,6 +429,7 @@ window.VENDERA={
   function spiele(box,url,titel){
     var f=document.createElement('iframe');f.src=url;f.title=titel;f.allow='autoplay; fullscreen';f.allowFullscreen=true;box.appendChild(f);
   }
+  if(!C.videoUrl){var po=$('poster');if(po&&po.parentNode)po.parentNode.classList.add('ohne-video');}
   if(C.videoUrl){$('playbtn').hidden=false;$('playbtn').onclick=function(){spiele($('poster'),C.videoUrl,'Einladung von Sarah Florin');this.remove();};}
 
   // Kundinnen-Karten (Daten in assets/kundinnen.js)
@@ -461,9 +462,11 @@ window.VENDERA={
 
   // Mobile Leiste: erscheint nach dem Hero, verschwindet beim Schluss-Abschnitt
   var sticky=$('sticky'), ziel=$('anmelden');
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(e){sticky.classList.toggle('on',!e[0].isIntersecting&&window.scrollY>500);},{threshold:0.05}).observe(ziel);
-    window.addEventListener('scroll',function(){if(window.scrollY<=500)sticky.classList.remove('on');},{passive:true});
+  if(sticky&&ziel){
+    var zielSichtbar=false, modalEl=$('modal');
+    var stickyUpd=function(){sticky.classList.toggle('on',window.scrollY>500&&!zielSichtbar);};
+    if('IntersectionObserver' in window){new IntersectionObserver(function(e){zielSichtbar=e[0].isIntersecting;stickyUpd();},{threshold:0.05}).observe(ziel);}
+    window.addEventListener('scroll',stickyUpd,{passive:true});stickyUpd();
   }
 
   // Meta-Pixel erst nach Zustimmung

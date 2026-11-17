@@ -418,10 +418,10 @@ h2{font-size:clamp(28px,4.6vw,40px);max-width:620px}
 .inhalt-cta{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:28px}
 .inhalt-cta .btn{min-width:min(100%,340px)}
 @media (max-width:640px){
-  .sec.alt .grid2 .card{padding:16px 18px;gap:6px;display:grid;grid-template-columns:34px 1fr;column-gap:12px;align-items:start}
-  .sec.alt .grid2 .card .ico{width:34px;height:34px;margin:0;grid-row:span 2}
-  .sec.alt .grid2 .card h3{font-size:16px;margin-top:6px}
-  .sec.alt .grid2 .card p{font-size:14px}
+  .sec.alt .grid2 .card:not(.step):not(.who){padding:16px 18px;gap:6px;display:grid;grid-template-columns:34px 1fr;column-gap:12px;align-items:start}
+  .sec.alt .grid2 .card:not(.step):not(.who) .ico{width:34px;height:34px;margin:0;grid-row:span 2}
+  .sec.alt .grid2 .card:not(.step):not(.who) h3{font-size:16px;margin-top:6px}
+  .sec.alt .grid2 .card:not(.step):not(.who) p{font-size:14px}
 }
 
 /* Abschnitt "Erfahre im kostenlosen Live-Workshop" (Vorlage: Screenshot) */
@@ -639,3 +639,17 @@ h2{font-size:clamp(28px,4.6vw,40px);max-width:620px}
 .inhalt-cta{margin-top:32px}
 .cta-sub{font-size:12.5px;font-weight:600;color:var(--muted);text-align:center}
 .plus .cta-sub{color:#B3A595}
+
+/* Handy-Korrekturen 17.11. */
+.ohne-video .vlabel,.ohne-video .poster{display:none}
+@media (max-width:640px){
+  .poster .ptag{white-space:nowrap;font-size:9px;padding:4px 9px}
+  .poster .pstat{display:none}
+  .card.step{padding:20px}
+  .card.step h3{padding-right:44px}
+}
+@media (max-width:640px){
+  .sec h2,.ursache h2{line-height:1.22}
+  .sec{padding:64px 0}
+  .head{margin-bottom:30px}
+}
