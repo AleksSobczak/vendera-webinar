@@ -593,3 +593,28 @@ h2{font-size:clamp(28px,4.6vw,40px);max-width:620px}
 /* die zwei entscheidenden Zeilen im Tagesablauf markieren */
 .tl.kern{position:relative;background:rgba(225,192,117,.16);border-radius:10px;margin:-6px -10px;padding:6px 10px;box-shadow:inset 3px 0 0 var(--acc)}
 .heute .tl.kern time{color:var(--acc)}
+
+/* Identifikation direkt nach dem Hero */
+.ident .head{margin-bottom:30px}
+.rollen{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rolle{background:#fff;border:1px solid var(--line2);border-radius:20px;padding:26px 24px;display:flex;flex-direction:column;gap:8px;box-shadow:0 14px 36px -22px rgba(42,33,28,.28)}
+.r-ico{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;color:#2A211C;background:linear-gradient(180deg,#EBD08F,#E1C075);margin-bottom:6px}
+.r-l{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.rolle h3{font-family:var(--serif);font-size:20px;line-height:1.25}
+.rolle p{margin:0;font-size:15px;line-height:1.55;color:var(--muted);font-weight:500}
+.beides{margin-top:14px;background:#2A211C;color:#F6EFE4;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:11px}
+.b-t{font-family:var(--serif);font-size:17px;color:#E1C075;margin-bottom:2px}
+.beides .li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.45;font-weight:500}
+.beides .li svg{flex:none;margin-top:2px;stroke:#E1C075}
+.nicht{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:center;font-size:14px;color:var(--muted);text-align:left}
+.nicht b{color:var(--text);font-weight:700}
+.nicht span{display:inline-flex;gap:7px;align-items:flex-start}
+.nicht svg{flex:none;margin-top:3px}
+@media (max-width:640px){
+  .rollen{grid-template-columns:1fr}
+  .rolle{padding:22px 20px}
+  .beides{padding:20px 18px}
+  .nicht{flex-direction:column;align-items:flex-start}
+}
+.beides .li,.hell .beides .li{color:#F6EFE4}
+.nicht{flex-direction:column;align-items:flex-start;justify-content:flex-start;max-width:640px;margin:16px auto 0;padding:0 4px}
