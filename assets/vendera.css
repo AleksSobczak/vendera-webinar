@@ -579,3 +579,17 @@ h2{font-size:clamp(28px,4.6vw,40px);max-width:620px}
   .head2{margin-top:44px}
 }
 .proof{padding:0 max(0px,calc((100% - 760px)/2))}
+
+/* Ursache-Pfeil zwischen Tagesvergleich und Lebens-Karten */
+.ursache{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;margin:0 auto 28px;max-width:600px}
+.u-line{width:3px;height:44px;border-radius:3px;background:linear-gradient(180deg,rgba(176,138,58,0),var(--acc))}
+.u-pill{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;border-radius:999px;background:#2A211C;color:#E1C075}
+.u-text{margin:0;font-family:var(--serif);font-size:clamp(18px,2.6vw,22px);line-height:1.45;color:var(--text)}
+.u-text b{color:var(--acc);white-space:nowrap}
+.u-pfeil{color:var(--acc);animation:upf 1.8s ease-in-out infinite}
+@keyframes upf{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@media (prefers-reduced-motion:reduce){.u-pfeil{animation:none}}
+.ursache h2{font-size:clamp(24px,4.4vw,34px)}
+/* die zwei entscheidenden Zeilen im Tagesablauf markieren */
+.tl.kern{position:relative;background:rgba(225,192,117,.16);border-radius:10px;margin:-6px -10px;padding:6px 10px;box-shadow:inset 3px 0 0 var(--acc)}
+.heute .tl.kern time{color:var(--acc)}
