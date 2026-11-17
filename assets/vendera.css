@@ -653,3 +653,15 @@ h2{font-size:clamp(28px,4.6vw,40px);max-width:620px}
   .sec{padding:64px 0}
   .head{margin-bottom:30px}
 }
+/* Hero am Handy: Sarah groß als weich auslaufender Hintergrund rechts (wie am Computer) */
+@media (max-width:640px){
+  .hero.mit-bild{position:relative;overflow:hidden}
+  .hero.mit-bild .hero-portrait{display:none}
+  .hero.mit-bild .hero-bg-sarah{display:block;position:absolute;top:0;right:-34px;bottom:auto;height:430px;width:auto;max-width:none;z-index:0;pointer-events:none;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 46%),linear-gradient(180deg,#000 62%,transparent 100%);-webkit-mask-composite:source-in;
+    mask-image:linear-gradient(90deg,transparent 0%,#000 46%),linear-gradient(180deg,#000 62%,transparent 100%);mask-composite:intersect}
+  .hero.mit-bild .hero-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "body";position:relative;z-index:1}
+  .hero.mit-bild .h-head{max-width:58%;min-height:300px}
+  .hero.mit-bild .h-head .methode{max-width:none}
+}
+@media (max-width:380px){.hero.mit-bild .h1{font-size:24px}.hero.mit-bild .h-head{max-width:60%}.hero.mit-bild .hero-bg-sarah{right:-46px}}
