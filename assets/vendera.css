@@ -619,3 +619,18 @@ h2{font-size:clamp(28px,4.6vw,40px);max-width:620px}
 .beides .li,.hell .beides .li{color:#F6EFE4}
 .nicht{flex-direction:column;align-items:flex-start;justify-content:flex-start;max-width:640px;margin:16px auto 0;padding:0 4px}
 .proof span{display:block;line-height:1.35;margin-top:3px}
+
+/* Vergleich Heute / Mit festem Ablauf (kompakt) */
+.vgl{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vgl-col{border-radius:20px;padding:24px 22px;display:flex;flex-direction:column;gap:14px}
+.vgl-col.minus{background:#fff;border:1px solid var(--line2);box-shadow:0 14px 36px -22px rgba(42,33,28,.28)}
+.vgl-col.plus{background:linear-gradient(180deg,#2F2620,#2A211C);color:#F6EFE4;box-shadow:0 24px 50px -28px rgba(42,33,28,.6)}
+.vgl-l{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:999px;background:rgba(42,33,28,.07);color:var(--muted);margin-bottom:2px}
+.plus .vgl-l{background:rgba(225,192,117,.18);color:#E1C075}
+.vgl-i{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;line-height:1.4;font-weight:600}
+.vgl-i svg{flex:none;margin-top:1px}
+.minus .vgl-i{color:var(--text)}
+.minus .vgl-i svg{color:#B4574A}
+.plus .vgl-i{color:#F6EFE4}
+.plus .vgl-i svg{color:#E1C075}
+@media (max-width:640px){.vgl{grid-template-columns:1fr}.vgl-col{padding:20px 18px;gap:12px}.vgl-i{font-size:15px}}
