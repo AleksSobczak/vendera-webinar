@@ -2228,7 +2228,7 @@ window.VENDERA={
     var kontakt={typ:'anmeldung',vorname:f.vorname.value.trim(),email:f.email.value.trim(),telefon:f.telefon.value.trim(),einwilligung:true,zeitpunkt:new Date().toISOString(),webinar:'2026-11-29',seite:location.href,herkunft:herkunft};
     senden(kontakt).then(function(){
       try{sessionStorage.setItem('vendera_anmeldung',JSON.stringify({vorname:kontakt.vorname,email:kontakt.email,t:Date.now()}));}catch(x){}
-      location.href='danke.html'+(location.search||'');
+      location.href='danke'+(location.search||'');
     }).catch(function(){btn.disabled=false;btn.textContent=text;err.hidden=false;});
   });
 })();

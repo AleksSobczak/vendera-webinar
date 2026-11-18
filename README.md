@@ -30,7 +30,7 @@ Oben in beiden HTML-Dateien steht ein Block `window.VENDERA = { ... }`. Nur dort
 
 ## Links in den E-Mails zur Aufzeichnung
 
-`https://workshop.vendera-sales.de/aufzeichnung.html?vorname={{contact.FIRSTNAME}}&email={{contact.EMAIL}}&utm_source=brevo&utm_content=<mail>`
+`https://workshop.vendera-sales.de/aufzeichnung?vorname={{contact.FIRSTNAME}}&email={{contact.EMAIL}}&utm_source=brevo&utm_content=<mail>`
 
 Vorname und E-Mail werden dann im Calendly-Formular vorausgefüllt, `utm_source`, `utm_campaign` und `utm_content` gehen an Calendly weiter.
 
