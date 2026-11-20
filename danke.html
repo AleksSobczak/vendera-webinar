@@ -14,7 +14,6 @@
 /* ===== EINSTELLUNGEN DER DANKE-SEITE ===== */
 window.VENDERA={
   formEndpoint:'https://phpafnimpbwbqgswqxqc.supabase.co/functions/v1/vendera-intake', // CRM: Zusatzfrage und anonyme Zählung
-  dankeVideo:'',     // Wistia-Media-ID von Sarahs kurzem Danke-Video (10 Zeichen). Leer = Foto ohne Play-Knopf
   whatsappLink:'',   // Einladungslink der WhatsApp-Community. Leer = Schritt wird ausgeblendet
   mailAktiv:false,   // true, sobald Brevo nach der Anmeldung sofort eine Bestätigung verschickt
   metaPixelId:'',    // Meta-Pixel-ID, sendet hier das Ereignis "Lead" (nur nach Zustimmung)
@@ -22,12 +21,12 @@ window.VENDERA={
   datenschutzUrl:'https://vendera-sales.de/datenschutz'
 };
 </script>
-<link rel="preconnect" href="https://fast.wistia.net">
-<link rel="preconnect" href="https://embed-ssl.wistia.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&amp;family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/vendera.css?v=36">
+<link rel="stylesheet" href="assets/vplayer.css?v=1">
+<style>.dvideo .vp{position:absolute;inset:0}</style>
 </head>
 <body class="hell">
 <div class="okbar"><span class="dot pulse"></span>Anmeldung bestätigt</div>
@@ -43,10 +42,7 @@ window.VENDERA={
 <div class="wrap">
 <span class="pill warn"><span class="dot pulse"></span>Anmeldung fast abgeschlossen</span>
 <h1 class="dh1" id="dtitel">Deine Anmeldung war <span class="acc">erfolgreich!</span><span id="dvideo-zeile"><br>Schau dir jetzt das kurze Video von Sarah an</span></h1>
-<div class="dvideo" id="dvideo">
-<img src="img/sarah-hero.jpg" alt="Sarah Florin" onerror="this.remove()">
-<button type="button" class="play" id="dplay" hidden aria-label="Video von Sarah abspielen"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg></button>
-</div>
+<div class="dvideo" id="dvideo"><div class="vp" data-vp data-name="danke" data-poster="assets/video/danke-poster.jpg?v=1" data-src-720="assets/video/danke.mp4?v=1" data-label="Video ansehen · 1:46"></div></div>
 <p class="dnote">Super, du bist auf der Teilnehmerliste!<br>Bitte erledige die <b><span class="anz">3</span> Schritte</b> unten, damit du <b><span class="wann-kurz">am Sonntag um 11:00 Uhr</span></b> live dabei bist.</p>
 </div>
 </section>
@@ -148,18 +144,7 @@ window.VENDERA={
     if(!x[1])return; alle('[data-link="'+x[0]+'"]').forEach(function(l){l.href=x[1];l.target='_blank';l.rel='noopener';});
   });
 
-  // Video von Sarah (Wistia)
-  if(C.dankeVideo){
-    $('dplay').hidden=false;
-    $('dplay').onclick=function(){
-      var f=document.createElement('iframe');
-      f.src='https://fast.wistia.net/embed/iframe/'+C.dankeVideo+'?autoPlay=true&videoFoam=false&fitStrategy=cover&playerColor=E1C075';
-      f.title='Video von Sarah Florin';f.allow='autoplay; fullscreen';f.allowFullscreen=true;
-      $('dvideo').appendChild(f);this.remove();
-    };
-  }else{
-    $('dvideo-zeile').hidden=true;
-  }
+  // Video von Sarah: eigener Player (assets/vplayer.js)
 
   // Schritte: WhatsApp nur mit Link, Nummern und Anzahl passen sich an
   if(C.whatsappLink){$('wa-link').href=C.whatsappLink;$('s-wa').hidden=false;}
@@ -188,6 +173,7 @@ window.VENDERA={
   function senden(d){if(!C.formEndpoint)return Promise.resolve();d.sitzung=SITZUNG;return fetch(C.formEndpoint,{method:'POST',keepalive:true,headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(d)});}
   function zaehle(name){senden({typ:'event',name:name,seite:location.href,herkunft:herkunft}).catch(function(){});}
   zaehle('danke_view');
+  window.vpEvent=function(n){zaehle('video_'+n);};
   $('wa-link').addEventListener('click',function(){zaehle('danke_whatsapp');});
 
   if(a&&a.email){
@@ -214,5 +200,6 @@ window.VENDERA={
   }
 })();
 </script>
+<script src="assets/vplayer.js?v=1" defer></script>
 </body>
 </html>
