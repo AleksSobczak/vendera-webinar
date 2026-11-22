@@ -397,6 +397,18 @@ html{scroll-behavior:smooth}
 .vd-dot{width:7px;height:7px;border-radius:50%;background:#B08A3A;box-shadow:0 0 0 3px rgba(176,138,58,.18)}
 .styles_op_77wa8r_head{display:flex;flex-direction:column}
 @media (max-width:640px){.vd-badge{font-size:10px;padding:5px 12px;margin-bottom:-8px}}
+.vd-timer{margin:26px auto 6px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.vd-t-l{font:800 11px/1 var(--vd-sans,Arial,sans-serif);letter-spacing:.14em;text-transform:uppercase;color:#B08A3A}
+.vd-t-row{display:flex;align-items:center;gap:8px}
+.vd-t-box{position:relative;width:78px;padding:12px 0 9px;border-radius:14px;background:linear-gradient(180deg,#352a23 0%,#2A211C 50%,#231b17 50%,#2A211C 100%);box-shadow:0 14px 30px -16px rgba(42,33,28,.7),inset 0 1px 0 rgba(255,255,255,.06);text-align:center;overflow:hidden}
+.vd-t-box::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.35)}
+.vd-t-box b{display:block;font:700 34px/1 var(--vd-sans,Arial,sans-serif);color:#E1C075;font-variant-numeric:tabular-nums}
+.vd-t-box small{display:block;margin-top:7px;font:700 9.5px/1 var(--vd-sans,Arial,sans-serif);letter-spacing:.12em;text-transform:uppercase;color:#B3A595}
+.vd-t-box b.tick{animation:vdtick .35s ease-out}
+@keyframes vdtick{0%{transform:translateY(-35%);opacity:.2}100%{transform:none;opacity:1}}
+.vd-t-sep{font:700 26px/1 var(--vd-sans,Arial,sans-serif);color:#C9A75A;margin-top:-16px}
+@media (max-width:640px){.vd-t-box{width:64px;padding:10px 0 8px;border-radius:12px}.vd-t-box b{font-size:28px}.vd-t-box small{font-size:8.5px;letter-spacing:.08em}.vd-t-row{gap:5px}.vd-t-sep{font-size:20px}}
+@media (prefers-reduced-motion:reduce){.vd-t-box b.tick{animation:none}}
 .vd-hp{position:absolute;left:-9999px;height:0;width:0;opacity:0}
 .vd-consent{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;max-width:560px;margin:0 auto;background:#2A211C;color:#F6EFE4;border-radius:16px;padding:14px 16px;font:500 13px/1.45 Inter,system-ui,sans-serif;display:none;gap:10px;flex-wrap:wrap;align-items:center;box-shadow:0 18px 46px rgba(42,33,28,.35)}
 .vd-consent.on{display:flex}.vd-consent a{color:#E1C075}.vd-consent span{flex:1 1 260px}
@@ -2106,7 +2118,7 @@ html{scroll-behavior:smooth}
     padding: 60px 0;
   }
 }
-</style><div data-react-fragment-container="U50Fwhb6gMkqHYVIGFuV0"><section class="styles_op_77wa95_root op-colors " data-op-ctrl="background,fullHeight" style="--color-text:42,33,28;--alpha-text:1;--color-bg:251,247,240;--alpha-bg:1;--color-border:242.25,242.25,242.25;--alpha-border:1;--color-hover-bg:251,247,240;--alpha-hover-bg:1;--color-hover-text:42,33,28;--alpha-hover-text:1"><div class="styles_op_77wa95_closing"><div class="styles_op_77wa95_glow" aria-hidden="true"></div><div class="styles_op_77wa95_wrap"><span class="styles_op_1nj5c3a_eyebrow styles_op_1nj5c3a_plain styles_op_1nj5c3a_center">Jetzt bist du dran</span><h2 class="styles_op_1r0guub_title styles_op_1r0guub_lg styles_op_1r0guub_center">Dieselben Gespräche.<!-- --> <span class="styles_op_1r0guub_accent">Andere Worte.</span></h2><div class="styles_op_otczwp_text styles_op_otczwp_m styles_op_otczwp_center"><div data-highlight-root=":R1p:" style="position:relative;z-index:1"><div class="con-kit-atom__effects"></div><div class="op-richtext-component"><div class="con-kit-quark con-kit-quark-paragraph" data-quark="block" data-block-key="b0">Sonntag, 29.11., 11:00 Uhr. 90 Minuten, live und kostenlos. Du bekommst das Magic Script Wort für Wort, siehst es in einem ganzen Gespräch und stellst deine Fragen.</div></div></div></div><div class="styles_op_1jqd0ul_wrap styles_op_1jqd0ul_center styles_op_77wa95_cta"><a class="styles_op_1jqd0ul_button" href="#anmelden"><span>Jetzt Magic Script sichern</span><svg class="styles_op_1jqd0ul_arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a><span class="styles_op_1jqd0ul_note">100 % kostenlos · Live online · Aufzeichnung für Angemeldete</span></div></div></div><footer class="styles_op_77wa95_footer op-colors" style="--color-text:42,33,28;--alpha-text:1;--color-bg:245,237,223;--alpha-bg:1;--color-border:239.62947368421052,224.25894736842105,197.3605263157894;--alpha-border:1;--color-hover-bg:245,237,223;--alpha-hover-bg:1;--color-hover-text:42,33,28;--alpha-hover-text:1"><img decoding="async" src="img/ms/logo.png" alt="Vendera – The Feminin Way Of Sales" class="styles_op_otczwu_image styles_op_77wa95_logo"/><nav class="styles_op_77wa95_links"><a class="styles_op_77wa95_link" href="https://vendera-sales.de/impressum" target="_blank" rel="noopener" data-op-ctrl="links" data-op-ctrl-idx="0">Impressum</a><a class="styles_op_77wa95_link" href="https://vendera-sales.de/datenschutz" target="_blank" rel="noopener" data-op-ctrl="links" data-op-ctrl-idx="1">Datenschutz</a></nav><span class="styles_op_77wa95_copyright" data-op-ctrl="copyright">© 2026 Vendera Sales · Sarah Florin</span></footer></section></div></div></div></div><style></style></section><!--/$--></main></div></div></div>
+</style><div data-react-fragment-container="U50Fwhb6gMkqHYVIGFuV0"><section class="styles_op_77wa95_root op-colors " data-op-ctrl="background,fullHeight" style="--color-text:42,33,28;--alpha-text:1;--color-bg:251,247,240;--alpha-bg:1;--color-border:242.25,242.25,242.25;--alpha-border:1;--color-hover-bg:251,247,240;--alpha-hover-bg:1;--color-hover-text:42,33,28;--alpha-hover-text:1"><div class="styles_op_77wa95_closing"><div class="styles_op_77wa95_glow" aria-hidden="true"></div><div class="styles_op_77wa95_wrap"><span class="styles_op_1nj5c3a_eyebrow styles_op_1nj5c3a_plain styles_op_1nj5c3a_center">Jetzt bist du dran</span><h2 class="styles_op_1r0guub_title styles_op_1r0guub_lg styles_op_1r0guub_center">Dieselben Gespräche.<!-- --> <span class="styles_op_1r0guub_accent">Andere Worte.</span></h2><div class="styles_op_otczwp_text styles_op_otczwp_m styles_op_otczwp_center"><div data-highlight-root=":R1p:" style="position:relative;z-index:1"><div class="con-kit-atom__effects"></div><div class="op-richtext-component"><div class="con-kit-quark con-kit-quark-paragraph" data-quark="block" data-block-key="b0">Sonntag, 29.11., 11:00 Uhr. 90 Minuten, live und kostenlos. Du bekommst das Magic Script Wort für Wort, siehst es in einem ganzen Gespräch und stellst deine Fragen.</div></div></div></div><div class="vd-timer" id="vd-timer" role="timer" aria-label="Zeit bis zum Start des Live-Workshops"><div class="vd-t-l">Der Live-Workshop startet in</div><div class="vd-t-row"><div class="vd-t-box"><b data-t="d">00</b><small>Tage</small></div><span class="vd-t-sep">:</span><div class="vd-t-box"><b data-t="h">00</b><small>Stunden</small></div><span class="vd-t-sep">:</span><div class="vd-t-box"><b data-t="m">00</b><small>Minuten</small></div><span class="vd-t-sep">:</span><div class="vd-t-box"><b data-t="s">00</b><small>Sekunden</small></div></div></div><div class="styles_op_1jqd0ul_wrap styles_op_1jqd0ul_center styles_op_77wa95_cta"><a class="styles_op_1jqd0ul_button" href="#anmelden"><span>Jetzt Magic Script sichern</span><svg class="styles_op_1jqd0ul_arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a><span class="styles_op_1jqd0ul_note">100 % kostenlos · Live online · Aufzeichnung für Angemeldete</span></div></div></div><footer class="styles_op_77wa95_footer op-colors" style="--color-text:42,33,28;--alpha-text:1;--color-bg:245,237,223;--alpha-bg:1;--color-border:239.62947368421052,224.25894736842105,197.3605263157894;--alpha-border:1;--color-hover-bg:245,237,223;--alpha-hover-bg:1;--color-hover-text:42,33,28;--alpha-hover-text:1"><img decoding="async" src="img/ms/logo.png" alt="Vendera – The Feminin Way Of Sales" class="styles_op_otczwu_image styles_op_77wa95_logo"/><nav class="styles_op_77wa95_links"><a class="styles_op_77wa95_link" href="https://vendera-sales.de/impressum" target="_blank" rel="noopener" data-op-ctrl="links" data-op-ctrl-idx="0">Impressum</a><a class="styles_op_77wa95_link" href="https://vendera-sales.de/datenschutz" target="_blank" rel="noopener" data-op-ctrl="links" data-op-ctrl-idx="1">Datenschutz</a></nav><span class="styles_op_77wa95_copyright" data-op-ctrl="copyright">© 2026 Vendera Sales · Sarah Florin</span></footer></section></div></div></div></div><style></style></section><!--/$--></main></div></div></div>
 
 
 
@@ -2264,6 +2276,24 @@ window.VENDERA={
       e.target.textContent = p<1 ? z.fmt(z.ziel*k) : z.end; if(p<1)requestAnimationFrame(schritt); })(performance.now());
   });},{threshold:0.6});
   els.forEach(function(el){if(el._z)io.observe(el);});
+})();
+</script>
+<script>
+/* Countdown im Schlussabschnitt */
+(function(){
+  var box=document.getElementById('vd-timer'); if(!box)return;
+  var START=Date.parse('2026-11-29T11:00:00+01:00'), ENDE=START+90*60*1000;
+  var el={}; ['d','h','m','s'].forEach(function(k){el[k]=box.querySelector('[data-t="'+k+'"]');});
+  var p=function(n){return (n<10?'0':'')+n;};
+  function setze(k,v){var e=el[k]; if(e.textContent!==v){e.textContent=v;e.classList.remove('tick');void e.offsetWidth;e.classList.add('tick');}}
+  function tick(){
+    var r=START-Date.now();
+    if(r<=0){ box.querySelector('.vd-t-l').textContent = Date.now()<ENDE ? 'Der Live-Workshop läuft gerade' : 'Der Live-Workshop ist vorbei'; box.querySelector('.vd-t-row').style.display='none'; return; }
+    var s=Math.floor(r/1000);
+    setze('d',p(Math.floor(s/86400))); setze('h',p(Math.floor(s%86400/3600))); setze('m',p(Math.floor(s%3600/60))); setze('s',p(s%60));
+    setTimeout(tick,1000-(Date.now()%1000));
+  }
+  tick();
 })();
 </script>
 </body>
