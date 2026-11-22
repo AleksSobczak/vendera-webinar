@@ -19,3 +19,8 @@ html,body,body *{--font-kit-header-font:var(--vd-sans)!important;--font-kit-text
 /* Danke- und Aufzeichnungsseite */
 :root,body.hell{--sans:var(--vd-sans);--serif:var(--vd-sans)}
 .acc{font-family:var(--vd-akzent)!important;font-style:italic}
+
+/* Überschriften wie in der Präsentation: dünne Arial, Akzentwort in Cambria kursiv */
+h1,h2,.styles_op_1r0guub_title.styles_op_1r0guub_xl,.styles_op_1r0guub_title.styles_op_1r0guub_lg{font-weight:400!important;letter-spacing:-.01em!important}
+h1 .acc,h2 .acc,h1 .styles_op_1r0guub_accent,h2 .styles_op_1r0guub_accent{font-weight:400!important;letter-spacing:0!important}
+.styles_op_77wa9a_note,.styles_op_77wa9a_note *,.styles_op_1r0guub_accent{font-weight:400!important}
