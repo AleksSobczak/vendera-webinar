@@ -1,0 +1,21 @@
+/* Schrift wie in der Webinar-Präsentation: Arial für alles, Cambria kursiv für Akzentwörter.
+   Arimo und Caladea sind die frei nutzbaren Gegenstücke mit denselben Maßen. Sie werden nur geladen,
+   wenn auf dem Gerät kein Arial bzw. Cambria installiert ist (z. B. Android). */
+@font-face{font-family:'Arimo';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/arimo-400.woff2) format('woff2')}
+@font-face{font-family:'Arimo';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/arimo-700.woff2) format('woff2')}
+@font-face{font-family:'Arimo';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/arimo-400-italic.woff2) format('woff2')}
+@font-face{font-family:'Arimo';font-style:italic;font-weight:700;font-display:swap;src:url(fonts/arimo-700-italic.woff2) format('woff2')}
+@font-face{font-family:'Caladea';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/caladea-400.woff2) format('woff2')}
+@font-face{font-family:'Caladea';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/caladea-700.woff2) format('woff2')}
+@font-face{font-family:'Caladea';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/caladea-400-italic.woff2) format('woff2')}
+@font-face{font-family:'Caladea';font-style:italic;font-weight:700;font-display:swap;src:url(fonts/caladea-700-italic.woff2) format('woff2')}
+:root{--vd-sans:Arial,'Arimo','Helvetica Neue',Helvetica,sans-serif;--vd-akzent:Cambria,'Caladea',Georgia,serif}
+
+/* Anmeldeseite (OnePage-Aufbau) */
+html,body,body *{--font-kit-header-font:var(--vd-sans)!important;--font-kit-text-font:var(--vd-sans)!important}
+.styles_op_1r0guub_accent,.styles_op_1r0guub_italic{font-family:var(--vd-akzent)!important;font-style:italic}
+.vd-badge,.vd-consent,.vd-consent button{font-family:var(--vd-sans)!important}
+
+/* Danke- und Aufzeichnungsseite */
+:root,body.hell{--sans:var(--vd-sans);--serif:var(--vd-sans)}
+.acc{font-family:var(--vd-akzent)!important;font-style:italic}
