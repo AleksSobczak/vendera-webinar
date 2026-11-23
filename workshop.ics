@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vendera Sales//Workshop//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:workshop-20261129@vendera-sales.de
+DTSTAMP:20261123T000000Z
+DTSTART:20261129T100000Z
+DTEND:20261129T113000Z
+SUMMARY:LIVE: Das Magic Script Workshop mit Sarah Florin
+DESCRIPTION:Ich freue mich schon riesig auf unseren gemeinsamen Workshop 
+ am Sonntag\, den 29.11.2026 um 11:00 Uhr! ✨\n\nDeinen Zugangslink beko
+ mmst du vor dem Start per E-Mail. Schau am Sonntagmorgen in dein Postfac
+ h.\n\nBis dann\, wir sehen uns live!\n\nDeine Sarah
+LOCATION:Online
+URL:https://workshop.vendera-sales.de
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Der Workshop startet in 30 Minuten
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Morgen um 11 Uhr: Das Magic Script Workshop
+END:VALARM
+END:VEVENT
+END:VCALENDAR

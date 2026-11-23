@@ -2,9 +2,47 @@
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Workshop in den Kalender eintragen</title>
-<meta http-equiv="refresh" content="0;url=https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=LIVE%3A%20Das%20Magic%20Script%20Workshop%20mit%20Sarah%20Florin&amp;dates=20261129T100000Z/20261129T113000Z&amp;details=Ich%20freue%20mich%20schon%20riesig%20auf%20unseren%20gemeinsamen%20Workshop%20am%20Sonntag%2C%20den%2029.11.2026%20um%2011%3A00%20Uhr!%20%E2%9C%A8%0A%0ADeinen%20Zugangslink%20bekommst%20du%20vor%20dem%20Start%20per%20E-Mail.%20Schau%20am%20Sonntagmorgen%20in%20dein%20Postfach.%0A%0ABis%20dann%2C%20wir%20sehen%20uns%20live!%0A%0ADeine%20Sarah&amp;location=Online">
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#FBF7F0;color:#2A211C;font:16px/1.5 Arial,sans-serif;text-align:center;padding:24px}a{color:#A97F2C}</style>
-</head><body>
-<p>Du wirst zu Google Kalender weitergeleitet …<br><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=LIVE%3A%20Das%20Magic%20Script%20Workshop%20mit%20Sarah%20Florin&amp;dates=20261129T100000Z/20261129T113000Z&amp;details=Ich%20freue%20mich%20schon%20riesig%20auf%20unseren%20gemeinsamen%20Workshop%20am%20Sonntag%2C%20den%2029.11.2026%20um%2011%3A00%20Uhr!%20%E2%9C%A8%0A%0ADeinen%20Zugangslink%20bekommst%20du%20vor%20dem%20Start%20per%20E-Mail.%20Schau%20am%20Sonntagmorgen%20in%20dein%20Postfach.%0A%0ABis%20dann%2C%20wir%20sehen%20uns%20live!%0A%0ADeine%20Sarah&amp;location=Online">Falls nichts passiert, hier tippen.</a></p>
-<script>location.replace(document.querySelector('a').href);</script>
+<meta name="description" content="Das Magic Script, Live-Workshop mit Sarah Florin. Sonntag, 29.11., 11:00 Uhr. Jetzt in deinen Kalender eintragen.">
+<meta property="og:title" content="Trag dir den Workshop in deinen Kalender ein">
+<meta property="og:description" content="Das Magic Script · Sonntag, 29.11. · 11:00 Uhr · live mit Sarah Florin">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="assets/schrift.css?v=3">
+<style>
+:root{--ink:#2A211C;--gold:#A97F2C;--bg:#FBF7F0}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font:16px/1.5 var(--vd-sans);display:flex;flex-direction:column;align-items:center;padding:28px 16px 40px}
+.logo{width:120px;margin-bottom:28px}
+.card{width:100%;max-width:440px;background:#fff;border:1px solid rgba(176,138,58,.25);border-radius:22px;padding:28px 22px;box-shadow:0 20px 50px -30px rgba(42,33,28,.35);text-align:center}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border-radius:999px;border:1px solid rgba(176,138,58,.35);font:700 11px/1 var(--vd-sans);letter-spacing:.1em;text-transform:uppercase}
+.tag i{width:7px;height:7px;border-radius:50%;background:#D2483F}
+h1{margin:18px 0 6px;font-weight:400;font-size:30px;line-height:1.12;letter-spacing:-.02em}
+h1 em{font-family:var(--vd-akzent);color:var(--gold);font-size:1.08em}
+.when{margin:0 0 22px;color:rgba(42,33,28,.75)}
+.when b{color:var(--ink)}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px 18px;border-radius:999px;font:700 16px/1.2 var(--vd-sans);text-decoration:none;margin-top:12px}
+.gold{background:linear-gradient(90deg,#B08A3A,#D9B565);color:var(--ink);box-shadow:0 10px 24px -12px rgba(176,138,58,.8)}
+.dark{background:var(--ink);color:#fff}
+.line{background:#fff;color:var(--ink);border:1px solid rgba(42,33,28,.18)}
+.btn svg{flex:none}
+.hint{margin:18px 0 0;font-size:13.5px;color:rgba(42,33,28,.6)}
+.top{order:-1}
+</style></head><body>
+<img class="logo" src="img/ms/logo.png" alt="Vendera Sales">
+<main class="card">
+<span class="tag"><i></i>Live-Workshop</span>
+<h1>Trag dir <em>Das Magic Script</em> in deinen Kalender ein</h1>
+<p class="when"><b>Sonntag, 29.11.2026</b><br>11:00 bis 12:30 Uhr · live mit Sarah Florin</p>
+<div id="knoepfe">
+<a class="btn gold" id="b-google" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=LIVE%3A%20Das%20Magic%20Script%20Workshop%20mit%20Sarah%20Florin&amp;dates=20261129T100000Z/20261129T113000Z&amp;details=Ich%20freue%20mich%20schon%20riesig%20auf%20unseren%20gemeinsamen%20Workshop%20am%20Sonntag%2C%20den%2029.11.2026%20um%2011%3A00%20Uhr%21%20%E2%9C%A8%0A%0ADeinen%20Zugangslink%20bekommst%20du%20vor%20dem%20Start%20per%20E-Mail.%20Schau%20am%20Sonntagmorgen%20in%20dein%20Postfach.%0A%0ABis%20dann%2C%20wir%20sehen%20uns%20live%21%0A%0ADeine%20Sarah&amp;location=Online" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Google Kalender</a>
+<a class="btn dark" id="b-apple" href="workshop.ics"><svg width="18" height="20" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Apple Kalender (iPhone, Mac)</a>
+<a class="btn line" id="b-outlook" href="https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&amp;rru=addevent&amp;subject=LIVE%3A%20Das%20Magic%20Script%20Workshop%20mit%20Sarah%20Florin&amp;startdt=2026-11-29T10:00:00Z&amp;enddt=2026-11-29T11:30:00Z&amp;body=Ich%20freue%20mich%20schon%20riesig%20auf%20unseren%20gemeinsamen%20Workshop%20am%20Sonntag%2C%20den%2029.11.2026%20um%2011%3A00%20Uhr%21%20%E2%9C%A8%0A%0ADeinen%20Zugangslink%20bekommst%20du%20vor%20dem%20Start%20per%20E-Mail.%20Schau%20am%20Sonntagmorgen%20in%20dein%20Postfach.%0A%0ABis%20dann%2C%20wir%20sehen%20uns%20live%21%0A%0ADeine%20Sarah&amp;location=Online" target="_blank" rel="noopener">Outlook</a>
+</div>
+<p class="hint">Ein Tipp genügt, dann steht der Termin in deinem Kalender. Den Zugangslink schicken wir dir vor dem Workshop per E-Mail.</p>
+</main>
+<script>
+/* Auf iPhone und Mac zuerst Apple anzeigen, sonst Google */
+(function(){try{var ua=navigator.userAgent||'';var apple=/iPhone|iPad|iPod|Macintosh/.test(ua);
+if(apple){var k=document.getElementById('knoepfe'),a=document.getElementById('b-apple'),g=document.getElementById('b-google');
+k.insertBefore(a,g);a.className='btn gold';g.className='btn dark';}}catch(e){}})();
+</script>
 </body></html>
