@@ -17,6 +17,7 @@ window.VENDERA={
   whatsappLink:'https://chat.whatsapp.com/ESR1nh2FdSV2dQDPJ3NqLr',   // Einladungslink der WhatsApp-Community. Leer = Schritt wird ausgeblendet
   mailAktiv:false,   // true, sobald Brevo nach der Anmeldung sofort eine Bestätigung verschickt
   metaPixelId:'1119699347540186',    // Meta-Pixel-ID, sendet hier das Ereignis "Lead" (nur nach Zustimmung)
+  pixelSofort:true,  // Testbetrieb seit 23.11.: Pixel lädt sofort, ohne Cookie-Banner (false = wieder mit Zustimmung)
   impressumUrl:'https://vendera-sales.de/impressum',
   datenschutzUrl:'https://vendera-sales.de/datenschutz'
 };
@@ -187,10 +188,12 @@ window.VENDERA={
   function pixel(){
     if(!C.metaPixelId||window.fbq)return;
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init',C.metaPixelId);fbq('track','PageView');
-    if(a&&!a.lead){fbq('track','Lead');a.lead=1;try{sessionStorage.setItem('vendera_anmeldung',JSON.stringify(a));}catch(e){}}
+    var uid='';try{uid=localStorage.getItem('vendera_uid')||'';}catch(x){}
+    fbq('init',C.metaPixelId,uid?{external_id:uid}:{});fbq('track','PageView');
+    if(a&&!a.lead){fbq('track','Lead',{content_name:'Workshop Das Magic Script 29.11.'},a.eid?{eventID:a.eid}:{});a.lead=1;try{sessionStorage.setItem('vendera_anmeldung',JSON.stringify(a));}catch(e){}}
   }
-  if(C.metaPixelId){
+  if(C.metaPixelId&&C.pixelSofort){pixel();}
+  else if(C.metaPixelId){
     var z=store('vendera_consent');
     if(z==='ja')pixel(); else if(z!=='nein')$('consent').classList.add('on');
     $('c-yes').onclick=function(){store('vendera_consent','ja');$('consent').classList.remove('on');pixel();};

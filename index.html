@@ -11,8 +11,8 @@ document.documentElement.setAttribute('data-variante',v);window.VD_VARIANTE=v;})
   if(!/(^|\.)webinarjam\.com$/.test(o))return;
   var d=e.data||{}; if(d.func!=='redirect')return;
   e.stopImmediatePropagation();
-  try{sessionStorage.setItem('vendera_anmeldung',JSON.stringify({quelle:'webinarjam',t:Date.now()}));}catch(x){}
-  try{window.vdWjAnmeldung&&window.vdWjAnmeldung();}catch(x){}
+  var eid='';try{eid=window.vdWjAnmeldung?window.vdWjAnmeldung():'';}catch(x){}
+  try{sessionStorage.setItem('vendera_anmeldung',JSON.stringify({quelle:'webinarjam',t:Date.now(),eid:eid}));}catch(x){}
   setTimeout(function(){location.href='danke'+(location.search||'');},150);
 },false);})();</script>
 
@@ -1796,7 +1796,8 @@ html.wj-ok #anmeldeformular{display:none}
 window.VENDERA={
   wjHash:'8wwwymty', // WebinarJam-Webinar "Das Magic Script": Anmeldung per WebinarJam-Popup
   formEndpoint:'https://phpafnimpbwbqgswqxqc.supabase.co/functions/v1/vendera-intake', // speichert Anmeldungen im Vendera-CRM
-  metaPixelId:'1119699347540186',  // Meta-Pixel-ID (lädt erst nach Zustimmung)
+  metaPixelId:'1119699347540186',  // Meta-Pixel-ID
+  pixelSofort:true,  // Testbetrieb seit 23.11.: Pixel lädt sofort, ohne Cookie-Banner (false = wieder mit Zustimmung)
   videos:{Simone:'r2dwvne7ij',Nadin:'01ferdvedt',Tina:'fcuu983815',Laura:'791eoio3ib'} // Wistia-IDs der Kundinnen-Videos
 };
 (function(){
@@ -1844,18 +1845,31 @@ window.VENDERA={
     return fetch(C.formEndpoint,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(daten)})
       .then(function(r){if(!r.ok)throw new Error('Speichern fehlgeschlagen ('+r.status+')');return r;});
   }
-  // Anonyme Zählung: kein Cookie, keine Speicherung im Browser
   function zaehle(name){if(!C.formEndpoint)return;senden({typ:'event',name:name,seite:location.href,herkunft:herkunft}).catch(function(){});}
+  // Besucher-Kennung für die Zuordnung von Pixel und Conversions API (external_id)
+  var UID=store('vendera_uid'); if(!UID){UID='v'+Math.random().toString(36).slice(2)+Date.now().toString(36);store('vendera_uid',UID);}
+  function keks(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):'';}
+  function fb(){return window.fbq?window.fbq:function(){};}
   zaehle('pageview');
-  window.vpEvent=function(n){zaehle('video_'+n);};
+  window.vpEvent=function(n){zaehle('video_'+n);fb()('trackCustom','Video_'+n);};
+  // Deep Tracking: Scrolltiefe und Verweildauer (eigene Auswertung + Meta)
+  var tiefen=[25,50,75,100], erreicht={};
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement, p=(h.scrollTop+innerHeight)/h.scrollHeight*100;
+    tiefen.forEach(function(t){if(p>=t-2&&!erreicht[t]){erreicht[t]=1;zaehle('scroll_'+t);
+      if(t===50)fb()('track','ViewContent',{content_name:'Workshop Das Magic Script'});
+      if(t>=50)fb()('trackCustom','Scroll_'+t);}});
+  },{passive:true});
+  [15,30,60,120].forEach(function(sek){setTimeout(function(){if(document.visibilityState!=='hidden'){zaehle('zeit_'+sek);if(sek>=30)fb()('trackCustom','Verweildauer_'+sek);}},sek*1000);});
 
-  // Meta-Pixel erst nach Zustimmung
+  // Meta-Pixel (Testbetrieb: sofort; sonst erst nach Zustimmung)
   function pixel(){
-    if(!C.metaPixelId||window.fbq)return;
+    if(!C.metaPixelId||window.fbq&&window.fbq.vdInit)return;
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init',C.metaPixelId);fbq('track','PageView');
+    fbq('init',C.metaPixelId,{external_id:UID});fbq('track','PageView',{},{eventID:'pv_'+SITZUNG});fbq.vdInit=1;
   }
-  if(C.metaPixelId){
+  if(C.metaPixelId&&C.pixelSofort){pixel();}
+  else if(C.metaPixelId){
     var z=store('vendera_consent');
     if(z==='ja')pixel(); else if(z!=='nein')$('consent').classList.add('on');
     $('c-yes').onclick=function(){store('vendera_consent','ja');$('consent').classList.remove('on');pixel();};
@@ -1866,13 +1880,16 @@ window.VENDERA={
   var form=$('anmeldeformular'); if(!form)return;
   var gestartet=false, geklickt=false;
   form.addEventListener('focusin',function(){if(!gestartet){gestartet=true;zaehle('form_start');}});
-  document.querySelectorAll('a[href="#anmelden"]').forEach(function(a){a.addEventListener('click',function(){if(!geklickt){geklickt=true;zaehle('form_open');}});});
+  document.querySelectorAll('a[href="#anmelden"]').forEach(function(a){a.addEventListener('click',function(){if(!geklickt){geklickt=true;zaehle('form_open');fb()('trackCustom','Registrierung_geoeffnet');}});});
   // WebinarJam-Popup (Webinar "Das Magic Script"): Klick auf "Jetzt registrieren" öffnet das Anmeldeformular von WebinarJam.
   // Lädt WebinarJam nicht, springen die Buttons wie bisher zu unserem Formular.
   window.vdWjAnmeldung=function(){
-    var d=JSON.stringify({typ:'event',name:'wj_anmeldung',seite:location.href,herkunft:herkunft});
-    try{if(navigator.sendBeacon&&navigator.sendBeacon(C.formEndpoint,new Blob([d],{type:'text/plain;charset=UTF-8'})))return;}catch(x){}
-    try{fetch(C.formEndpoint,{method:'POST',keepalive:true,headers:{'Content-Type':'text/plain;charset=UTF-8'},body:d});}catch(x){}
+    var eid='lead_'+SITZUNG;
+    var d=JSON.stringify({typ:'event',name:'wj_anmeldung',sitzung:SITZUNG,seite:location.href,herkunft:herkunft,event_id:eid,uid:UID,fbp:keks('_fbp'),fbc:keks('_fbc')});
+    var ok=false;
+    try{ok=!!(navigator.sendBeacon&&navigator.sendBeacon(C.formEndpoint,new Blob([d],{type:'text/plain;charset=UTF-8'})));}catch(x){}
+    if(!ok){try{fetch(C.formEndpoint,{method:'POST',keepalive:true,headers:{'Content-Type':'text/plain;charset=UTF-8'},body:d});}catch(x){}}
+    return eid;
   };
   if(C.wjHash){
     // Eigenes Popup (Sarahs Foto, Titel) mit dem eingebetteten Original-Formular von WebinarJam in Vendera-Gold.
@@ -1904,9 +1921,9 @@ window.VENDERA={
     if(!f.checkValidity()){f.reportValidity();return;}
     if(Date.now()>END+3*864e5){err.textContent='Der Workshop ist vorbei. Eine Anmeldung ist nicht mehr möglich.';err.hidden=false;return;}
     btn.disabled=true; btn.textContent='Einen Moment …'; err.hidden=true;
-    var kontakt={typ:'anmeldung',vorname:f.vorname.value.trim(),email:f.email.value.trim(),telefon:f.telefon.value.trim(),einwilligung:true,zeitpunkt:new Date().toISOString(),webinar:'2026-11-29',seite:location.href,herkunft:herkunft};
+    var kontakt={typ:'anmeldung',vorname:f.vorname.value.trim(),email:f.email.value.trim(),telefon:f.telefon.value.trim(),einwilligung:true,zeitpunkt:new Date().toISOString(),webinar:'2026-11-29',seite:location.href,herkunft:herkunft,event_id:'lead_'+SITZUNG,uid:UID,fbp:keks('_fbp'),fbc:keks('_fbc')};
     senden(kontakt).then(function(){
-      try{sessionStorage.setItem('vendera_anmeldung',JSON.stringify({vorname:kontakt.vorname,email:kontakt.email,t:Date.now()}));}catch(x){}
+      try{sessionStorage.setItem('vendera_anmeldung',JSON.stringify({vorname:kontakt.vorname,email:kontakt.email,t:Date.now(),eid:kontakt.event_id}));}catch(x){}
       location.href='danke'+(location.search||'');
     }).catch(function(){btn.disabled=false;btn.textContent=text;err.hidden=false;});
   });

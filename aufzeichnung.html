@@ -24,6 +24,7 @@ window.VENDERA={
   buchungslink:'https://calendly.com/sarahflorin/beratungsgespraech?utm_medium=replay',
   formEndpoint:'https://phpafnimpbwbqgswqxqc.supabase.co/functions/v1/vendera-intake', // zählt Aufrufe und Klicks auf "Termin buchen" (anonym)
   metaPixelId:'1119699347540186',    // Meta-Pixel-ID (lädt erst nach Zustimmung, sendet "Schedule" beim Klick auf Buchen)
+  pixelSofort:true,  // Testbetrieb seit 23.11.: Pixel lädt sofort, ohne Cookie-Banner (false = wieder mit Zustimmung)
   geschenk:'',       // nur ausfüllen, wenn es das Geschenk wirklich gibt, z. B. 'Sarahs Einwand-Sheets als PDF'
   plaetze:'',        // nur ausfüllen, wenn es die Begrenzung wirklich gibt, z. B. 'Sarah führt in der Woche nach dem Workshop 15 Gespräche.'
   impressumUrl:'https://vendera-sales.de/impressum',
@@ -222,9 +223,11 @@ window.VENDERA={
   function pixel(){
     if(!C.metaPixelId||window.fbq)return;
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init',C.metaPixelId);fbq('track','PageView');fbq('track','ViewContent',{content_name:'Aufzeichnung Workshop 29.11.'});
+    var uid='';try{uid=localStorage.getItem('vendera_uid')||'';}catch(x){}
+    fbq('init',C.metaPixelId,uid?{external_id:uid}:{});fbq('track','PageView');fbq('track','ViewContent',{content_name:'Aufzeichnung Workshop 29.11.'});
   }
-  if(C.metaPixelId){
+  if(C.metaPixelId&&C.pixelSofort){pixel();}
+  else if(C.metaPixelId){
     var z=store('vendera_consent');
     if(z==='ja')pixel(); else if(z!=='nein')$('consent').classList.add('on');
     $('c-yes').onclick=function(){store('vendera_consent','ja');$('consent').classList.remove('on');pixel();};
