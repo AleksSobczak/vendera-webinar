@@ -10,7 +10,7 @@ Statische Seiten für workshop.vendera-sales.de (GitHub Pages).
 - `assets/vendera.css`: gemeinsames Design beider Seiten (dunkel, Gold als Akzent). Die Akzentfarbe steht oben in `--acc`, `--acc-hi`, `--acc-lo`
 - Nach Änderungen an `assets/` die Versionsnummer `?v=` in beiden HTML-Dateien hochzählen, sonst zeigen Browser bis zu 10 Minuten die alte Datei
 - `assets/kundinnen.js`: Kundinnen-Ergebnisse für beide Seiten (Foto, Zitat, optional Video-Link)
-- `img/og.png`: Vorschaubild für WhatsApp und Social Media
+- `img/og-magic-script.jpg`: Vorschaubild für WhatsApp und Social Media (seit 27.11. im Look der Anmeldeseite). Bei einem neuen Bild neuen Dateinamen vergeben, sonst zeigt WhatsApp das alte aus dem Zwischenspeicher
 
 ## Einstellungen
 
