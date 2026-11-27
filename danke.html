@@ -155,11 +155,11 @@ window.VENDERA={
   if(C.mailAktiv){$('mail-text').textContent='Wir haben dir gerade deine persönliche Einladung mit allen Infos und dem Zugangslink geschickt. Öffne sie und schau auch im Spam- oder Werbung-Ordner nach, falls sie nicht gleich da ist.';}
 
   // Kalender
-  var titel='LIVE: Das Magic Script | Workshop mit Sarah Florin';
+  var titel='LIVE: „Das Magic Script“ | Workshop mit Sarah Florin';
   var live='https://workshop.vendera-sales.de/live';
   var text='Ich freue mich schon riesig auf unseren gemeinsamen Workshop am Sonntag, den 29.11.2026 um 11:00 Uhr! ✨\n\nHier kommst du am Sonntag direkt in den Live-Raum:\n'+live+'\n\nÖffne den Link am besten ein paar Minuten vor 11 Uhr. Deinen persönlichen Zugangslink bekommst du zusätzlich per E-Mail.\n\nBis dann, wir sehen uns live!\n\nDeine Sarah';
   $('cal-google').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(titel)+'&dates=20261129T100000Z/20261129T113000Z&details='+encodeURIComponent(text)+'&location='+encodeURIComponent(live);
-  var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Vendera Sales//Workshop//DE','BEGIN:VEVENT','UID:workshop-20261129@vendera-sales.de','DTSTAMP:20261127T164500Z','DTSTART:20261129T100000Z','DTEND:20261129T113000Z','SUMMARY:'+titel,'DESCRIPTION:'+text.replace(/\\/g,'\\\\').replace(/,/g,'\\,').replace(/;/g,'\\;').replace(/\n/g,'\\n'),'LOCATION:'+live,'URL:'+live,'BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:Workshop startet in 30 Minuten','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Vendera Sales//Workshop//DE','BEGIN:VEVENT','UID:workshop-20261129@vendera-sales.de','DTSTAMP:20261127T164700Z','DTSTART:20261129T100000Z','DTEND:20261129T113000Z','SUMMARY:'+titel,'DESCRIPTION:'+text.replace(/\\/g,'\\\\').replace(/,/g,'\\,').replace(/;/g,'\\;').replace(/\n/g,'\\n'),'LOCATION:'+live,'URL:'+live,'BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:Workshop startet in 30 Minuten','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
   $('cal-ics').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
   $('cal-btn').onclick=function(){$('calopts').hidden=false;this.hidden=true;zaehle('danke_kalender');};
 
